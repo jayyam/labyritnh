@@ -26,7 +26,8 @@ public class Main
 			{
 				if(!Session.isLogged()) 
 					{
-						option = unloggedMenu();
+						option = getOptionUnlogged();//LLamar a la clase interface
+						unloggedAction(option);
 					}
 			}
 		System.out.println("Ha iniciado sesion? ->  " + Session.isLogged());
@@ -47,21 +48,67 @@ public class Main
 	int option = -1;
 	do 
 		{
-		do 	{
 			option=Interface.getInt(Config.UNLOGGEDMENU);
 		}
+	
 	while (option < 0 || option > 2);
 	return option;			
 	
 		
 	}
-	private static void unloggedOption()
+	private static void unloggedOption(int option)
 	
 	{
-		switch
-		case 1
-		case 2
-		
-		
+		switch(option)
+			
+			{
+			case 1:
+				{
+					System.out.println("\nLOGIN PROXIMAMENTE\n");
+				}
+			case 2:
+				{
+					System.out.println("\nLOGIN PROXIMAMENTE\n");
+				}
+			}		
 	}
+	private static void getOptionLogged(int option) 
+	
+	{
+	
+		switch(option)
+	
+		{
+		case 1:
+			{
+				System.out.println("\nLOGIN PROXIMAMENTE\n");
+			}
+		case 2:
+			{
+				System.out.println("\nLOGIN PROXIMAMENTE\n");
+			}
+		case 3:
+			{
+				System.out.println("\nLOGIN PROXIMAMENTE\n");
+			}
+		case 4:
+			{
+				System.out.println("\nLOGIN PROXIMAMENTE\n");
+			}
+		case 5:
+			{
+				System.out.println("\nLOGIN PROXIMAMENTE\n");
+			}
+		case 6:
+			{
+				System.out.println("\nLOGIN PROXIMAMENTE\n");
+			}				
+		}
+	
+	}
+
+
+
+
+
 }
