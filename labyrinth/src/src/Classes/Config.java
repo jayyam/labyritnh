@@ -11,7 +11,8 @@ public class Config
 		public static final String WELCOME = "Bienvenido al resolvedor de laberintos";
 		public static final String GOODBYE = "Fin de Programa!";
 		
-		public static final String UNLOGGEDMENU = "-------------------\n\"
+		public static final String UNLOGGEDMENU ="\n\MENU\n\"
+												+ "-------------------\n\"
 												+ "1- Iniciar Sesion\n\"
 											    + "2- Registro\n\" "
 											    + "0- Salir\\n\\";

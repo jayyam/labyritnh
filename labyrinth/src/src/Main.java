@@ -38,10 +38,30 @@ public class Main
 	{
 		int option = -1;
 			
-			do 	{
-					option=Interface.getInt(Config.UNLOGGEDMENU);
-				}
-			while (option < 0 || option > 2);
-			return option;	
-	}		
+			
+	}
+	
+	private static int getOptionUnlogged() 
+	
+	{
+	int option = -1;
+	do 
+		{
+		do 	{
+			option=Interface.getInt(Config.UNLOGGEDMENU);
+		}
+	while (option < 0 || option > 2);
+	return option;			
+	
+		
+	}
+	private static void unloggedOption()
+	
+	{
+		switch
+		case 1
+		case 2
+		
+		
+	}
 }
