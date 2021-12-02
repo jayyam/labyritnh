@@ -18,90 +18,102 @@ public class Main
 	public static void main(String[] args)
 	
 	{
-		System.out.println("Version actual: " + Config.VERSION);
+		System.out.println("Version actual: "+ Config.VERSION);
 		System.out.println(Config.WELCOME);
 		
 		int option = -1;
 		while(option !=0)
 			{
-				if(!Session.isLogged()) 
+			do {
+					if(!Session.isLogged()) 
 					{
-						option = getOptionUnlogged();//LLamar a la clase interface
-						unloggedAction(option);
+						option = Interface.getInt(Config.UNLOGGEDMENU); //LLamar a la clase config
+						//UnloggedAction(option);
+					}
+				
+					if(!Session.isLogged()) 
+					
+					{
+						option = Interface.getInt(Config.LOGGEDMENU); //LLamar a la clase Config
+						//LoggerdAction(option);
 					}
 			}
+				while (option < 0 || option > 2);
+				
+			}
 		System.out.println("Ha iniciado sesion? ->  " + Session.isLogged());
-		
-		System.out.println(Config.GOODBYE);		
-	}
-	
-	private static int unloggedMenu() 
-	{
-		int option = -1;
-			
 			
 	}
-	
-	private static int getOptionUnlogged() 
-	
-	{
-	int option = -1;
-	do 
-		{
-			option=Interface.getInt(Config.UNLOGGEDMENU);
-		}
-	
-	while (option < 0 || option > 2);
-	return option;			
-	
-		
-	}
-	private static void unloggedOption(int option)
+
+	private static void unloggedOption(int option) throws InterruptedException
 	
 	{
 		switch(option)
 			
-			{
+			{	
 			case 1:
 				{
 					System.out.println("\nLOGIN PROXIMAMENTE\n");
 				}
+				
 			case 2:
 				{
 					System.out.println("\nLOGIN PROXIMAMENTE\n");
 				}
+				
 			}		
 	}
-	private static void getOptionLogged(int option) 
+	private static void getOptionLogged(int option) throws InterruptedException 
 	
 	{
 	
 		switch(option)
 	
 		{
+		
+		case 0:
+		{
+			
+			Thread.sleep(Config.MILISECONDS);
+			break;
+		}
 		case 1:
 			{
-				System.out.println("\nLOGIN PROXIMAMENTE\n");
+					System.out.println("\nLOGIN PROXIMAMENTE\n");
+					Thread.sleep(Config.MILISECONDS);
+					break;
 			}
 		case 2:
 			{
 				System.out.println("\nLOGIN PROXIMAMENTE\n");
-			}
+					Thread.sleep(Config.MILISECONDS);
+					break;
+			}	
 		case 3:
 			{
 				System.out.println("\nLOGIN PROXIMAMENTE\n");
+					Thread.sleep(Config.MILISECONDS);	
+					break;
 			}
 		case 4:
 			{
 				System.out.println("\nLOGIN PROXIMAMENTE\n");
+					Thread.sleep(Config.MILISECONDS);
+					break;
 			}
 		case 5:
 			{
 				System.out.println("\nLOGIN PROXIMAMENTE\n");
+					Session.ShowUser();
+					Thread.sleep(Config.MILISECONDS);
+					break;
 			}
 		case 6:
 			{
-				System.out.println("\nLOGIN PROXIMAMENTE\n");
+				System.out.println("\nLOGIN Cerrando Sesion\n");
+					Session.logout();
+					Thread.sleep(Config.MILISECONDS);//time de espera antes despues de cerrrar sesion
+					break;
 			}				
 		}
 	

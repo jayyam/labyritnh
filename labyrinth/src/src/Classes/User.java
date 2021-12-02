@@ -13,18 +13,7 @@ public class User
 	public String birthdate;
 	public String role;
 	
-	public void ShowUser() //debe ir en session
-
-	{
-		System.out.println("usuario: " + username);
-		System.out.println("Nombre de usuario: " + name);
-		System.out.println("Edad: " + age);
-		System.out.println("NIF: " + DNI);
-		System.out.println("Correo electronico: " + email);
-		System.out.println("Direccion: " + address);
-		System.out.println("Fecha de nacimiento: " + birthdate);
-		System.out.println("Nombre de usuario: " + role);
-	}
+	
 	
 	/**User currentUser = new User();
 	
