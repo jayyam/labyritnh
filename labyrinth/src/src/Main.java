@@ -45,7 +45,7 @@ public class Main
 			
 	}
 
-	private static void unloggedOption(int option) throws InterruptedException
+	private static void getUnloggedOption(int option) throws InterruptedException
 	
 	{
 		switch(option)
@@ -53,17 +53,21 @@ public class Main
 			{	
 			case 1:
 				{
-					System.out.println("\nLOGIN PROXIMAMENTE\n");
+					Session.Login();
+					Thread.sleep(Config.MILISECONDS);
+					break;
 				}
 				
 			case 2:
 				{
-					System.out.println("\nLOGIN PROXIMAMENTE\n");
+					System.out.println("\nREGISTRO PROXIMAMENTE\n");
+					Thread.sleep(Config.MILISECONDS);
+					break;
 				}
 				
 			}		
 	}
-	private static void getOptionLogged(int option) throws InterruptedException 
+	private static void getLoggedOption(int option) throws InterruptedException 
 	
 	{
 	
