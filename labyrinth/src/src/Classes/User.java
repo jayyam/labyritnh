@@ -13,12 +13,5 @@ public class User
 	public String birthdate;
 	public String role;
 	
-	
-	
-	/**User currentUser = new User();
-	
-	
-	
-	*/
 }
 

@@ -15,10 +15,10 @@ public class Main
 
 {
 	public static Session Session = new Session();
-	public static void main(String[] args)
+	public static void main(String[] args) throws InterruptedException
 	
 	{
-		System.out.println("Version actual: "+ Config.VERSION);
+		System.out.println("Version actual: " + Config.VERSION);
 		System.out.println(Config.WELCOME);
 		
 		int option = -1;
@@ -28,6 +28,7 @@ public class Main
 					if(!Session.isLogged()) 
 					{
 						option = Interface.getInt(Config.UNLOGGEDMENU); //LLamar a la clase config
+						getUnloggedOption(option);
 						//UnloggedAction(option);
 					}
 				
@@ -35,6 +36,7 @@ public class Main
 					
 					{
 						option = Interface.getInt(Config.LOGGEDMENU); //LLamar a la clase Config
+						getLoggedOption(option);
 						//LoggerdAction(option);
 					}
 			}
@@ -60,7 +62,7 @@ public class Main
 				
 			case 2:
 				{
-					System.out.println("\nREGISTRO PROXIMAMENTE\n");
+					Session.singupV1();
 					Thread.sleep(Config.MILISECONDS);
 					break;
 				}
