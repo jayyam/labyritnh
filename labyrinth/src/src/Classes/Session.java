@@ -1,3 +1,10 @@
+/**
+ * Session.java
+ * Clase del sistema para resolver las sesiones
+ * DMS/OAGS - 2021/22
+ * version 0.1.0
+ */
+
 package src.Classes;
 
 import java.io.File; // Import the File class
@@ -157,7 +164,7 @@ public class Session
 	}
 
 	/**
-	 * public void singupV2() { String username = ""; for (int i=0;
+	 * public void singupV2() { String username = ""; for (int i=0;//CAmbiar por V1
 	 * i<Config.FIELDS.lenght;i++) { String aux =
 	 * Interface.getString(Config.FIELDS[i]] + ": "); if (i==0 && checkUser(aux)) {
 	 * System.out.println(username + "\n ya existe!"); return; } newUser += aux +

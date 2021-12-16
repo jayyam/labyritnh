@@ -1,3 +1,9 @@
+/**
+ * Config.java
+ * Clase que contiene los menus
+ * DMS/OAGS - 2021/22
+ * version 0.1.0
+ */
 package src.Classes;
 
 public class Config 

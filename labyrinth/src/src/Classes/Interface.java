@@ -1,3 +1,9 @@
+/**
+ * Interface.java
+ * Clase dada por el profesor
+ * DMS/OAGS - 2021/22
+ * version 0.1.0
+ */
 package src.Classes;
 
 import java.util.Scanner;

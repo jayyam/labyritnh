@@ -2,7 +2,7 @@ package src;
 
 /**
  * Main.java
- * Programa principal del sistema para resolver un laberinto
+ * Clase principal del sistema para resolver un laberinto
  * DMS/OAGS - 2021/22
  * version 0.1.0
  */
