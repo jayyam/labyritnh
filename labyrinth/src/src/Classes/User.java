@@ -12,6 +12,5 @@ public class User
 	public String address;
 	public String birthdate;
 	public String role;
-	
 }
 
