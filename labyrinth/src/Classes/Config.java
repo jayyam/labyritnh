@@ -35,12 +35,13 @@ public class Config
 												+ "5- Ver usuario actual\n"
 												+ "6- Cerrar sesion\n"
 												+ "0- Salir\n";
-		
-		/**public static final ArrayString<FIELDS> = {"Nombre de usuario","Contraseña" "Nombre completo", Edad"}
+
+		public static final String[] FIELDS = new String[]{"Nombre de usuario?: ", "Contraseña?: ", "Nombre completo?: ", "Edad?: ", "DNI/NIF?: ", "Email?: ", "Direccion?: ", "Fecha de nacimiento?: "};
 
 
 
-		 currentUser.username = "omarsantana";
+/**
+ currentUser.username = "omarsantana";
 		currentUser.name = "Omar Alfonso Garcia Santana";
 		currentUser.age = "96";
 		currentUser.DNI = "48658503S";

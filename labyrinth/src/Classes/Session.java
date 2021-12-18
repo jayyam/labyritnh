@@ -132,7 +132,7 @@ public class Session
 		return found;
 	}
 
-	public void singupV1()
+	/**public void singupV1()
 
 	{
 		String username = Interface.getString("Nombre de usuario?: ");
@@ -162,37 +162,28 @@ public class Session
 			System.out.println("error occurred.");
 		}
 	}
+*/
 
-	/**
-	 * public void singupV2() { String username = ""; for (int i=0;//CAmbiar por V1
-	 * i<Config.FIELDS.lenght;i++) { String aux =
-	 * Interface.getString(Config.FIELDS[i]] + ": "); if (i==0 && checkUser(aux)) {
-	 * System.out.println(username + "\n ya existe!"); return; } newUser += aux +
-	 * "#"; }
-	 * 
-	 * ------------------------------------------------------
-	 * public void signup2() {
-	 *         String newUser = "\n";
-	 *         for (int i = 0; i < Config.fields.length; i++) {
-	 *             String aux = Interface.getString(Config.fields[i] + ": ");
-	 *             if (i == 0 && checkUser(aux)) {
-	 *                 System.out.print("\nEl usuario ya existe\n");
-	 *                 return;
-	 *             }
-	 *             newUser += aux + "#";
-	 *         }
-	 *         newUser += "user";
-	 *
-	 *         newUser += user;
-	 *         if (writeUser(newUser)) {
-	 *             System.out.print("\nUsuario Registrado correctamente");
-	 *         } else {
-	 *             System.out.print("\nHa ocurrido un error en el registro");
-	 *         }
-	 *     }
-	 * 
-	 * }
-	 */
+	  public void signupV2() {
+	          String newUser = "\n";
+	          for (int i = 0; i < Config.FIELDS.length; i++) {
+	              String aux = Interface.getString(Config.FIELDS[i] + ": ");
+	              if (i == 0 && checkUser(aux)) {
+	                  System.out.print("\nEl usuario ya existe\n");
+	                  return;
+	              }
+	              newUser += aux + "#";
+	          }
+	          newUser += "user";
+
+	          newUser += user;
+	          if (writeUser(newUser)) {
+	              System.out.print("\nUsuario Registrado correctamente");
+	          } else {
+	              System.out.print("\nHa ocurrido un error en el registro");
+	          }
+	      }
+
 
 	private boolean writeUser(String newUser) {
 		boolean success = false;

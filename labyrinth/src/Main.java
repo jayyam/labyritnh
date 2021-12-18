@@ -47,7 +47,7 @@ public class Main
 			}
 
 			case 2: {
-				Session.singupV1();
+				Session.signupV2();
 				Thread.sleep(Classes.Config.MILISECONDS);
 				break;
 			}
