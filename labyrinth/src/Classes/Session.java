@@ -5,14 +5,14 @@
  * version 0.1.0
  */
 
-package src.Classes;
+package Classes;
 
-import java.io.File; // Import the File class
-import java.io.FileNotFoundException; // Import this class to handle errors
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner; // Import the Scanner class to read text files
+import java.util.Scanner;
 
 public class Session
 
@@ -170,7 +170,26 @@ public class Session
 	 * System.out.println(username + "\n ya existe!"); return; } newUser += aux +
 	 * "#"; }
 	 * 
-	 * 
+	 * ------------------------------------------------------
+	 * public void signup2() {
+	 *         String newUser = "\n";
+	 *         for (int i = 0; i < Config.fields.length; i++) {
+	 *             String aux = Interface.getString(Config.fields[i] + ": ");
+	 *             if (i == 0 && checkUser(aux)) {
+	 *                 System.out.print("\nEl usuario ya existe\n");
+	 *                 return;
+	 *             }
+	 *             newUser += aux + "#";
+	 *         }
+	 *         newUser += "user";
+	 *
+	 *         newUser += user;
+	 *         if (writeUser(newUser)) {
+	 *             System.out.print("\nUsuario Registrado correctamente");
+	 *         } else {
+	 *             System.out.print("\nHa ocurrido un error en el registro");
+	 *         }
+	 *     }
 	 * 
 	 * }
 	 */

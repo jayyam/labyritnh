@@ -4,12 +4,11 @@
  * DMS/OAGS - 2021/22
  * version 0.1.0
  */
-package src.Classes;
+package Classes;
 
 import java.util.Scanner;
-import src.Classes.Config;
 
-public class Interface 
+public class Interface
 {
 	public static Scanner keyboard = new Scanner(System.in);
 

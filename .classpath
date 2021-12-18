@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="/labyrinth"/>
+	<classpathentry kind="src" path="/labyrinth/labyrinth/src"/>
+	<classpathentry kind="src" path="/labyrinth/labyrinth/src/Classes"/>
+	<classpathentry kind="src" path="/labyrinth/labyrinth/src/assets"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/jdk-11.0"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

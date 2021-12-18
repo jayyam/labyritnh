@@ -1,18 +1,19 @@
+package Classes;
+
 /**
  * Config.java
  * Clase que contiene los menus
  * DMS/OAGS - 2021/22
  * version 0.1.0
  */
-package src.Classes;
 
-public class Config 
+public class Config
 
 {		public static final int MILISECONDS = 2000;
 		
 		public static final String VERSION =  "v0.1.0";
 		public static final String FILEABSOLUTEPATH = "./assets/files";
-		public static final String FILEPATH = "/home/daw20-09/git/repository/labyrinth/src/assets/files/";
+		public static final String FILEPATH = "/home/omarsantana/IdeaProjects/labyrinth/labyrinth/src/assets/files/";
 		
 		public static final String USERSFILE = "users.txt";
 		
@@ -36,7 +37,10 @@ public class Config
 												+ "0- Salir\n";
 		
 		/**public static final ArrayString<FIELDS> = {"Nombre de usuario","Contraseña" "Nombre completo", Edad"}
-		currentUser.username = "omarsantana";
+
+
+
+		 currentUser.username = "omarsantana";
 		currentUser.name = "Omar Alfonso Garcia Santana";
 		currentUser.age = "96";
 		currentUser.DNI = "48658503S";

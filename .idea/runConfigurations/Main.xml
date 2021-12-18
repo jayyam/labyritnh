@@ -1,0 +1,14 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Main" type="Java Scratch">
+    <option name="ALTERNATIVE_JRE_PATH" value="/usr/java/jdk-11.0.12+7" />
+    <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+    <option name="INCLUDE_PROVIDED_SCOPE" value="true" />
+    <option name="MAIN_CLASS_NAME" value="Main.java" />
+    <module name="labyrinth" />
+    <option name="SCRATCH_FILE_URL" value="file://$PROJECT_DIR$/labyrinth/src/Main.java" />
+    <shortenClasspath name="NONE" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
