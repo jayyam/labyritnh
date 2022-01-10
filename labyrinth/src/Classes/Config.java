@@ -11,9 +11,9 @@ public class Config
 
 {		public static final int MILISECONDS = 2000;
 		
-		public static final String VERSION =  "v0.1.0";
+		public static final String VERSION =  "v0.2.0";
 		public static final String FILEABSOLUTEPATH = "./assets/files";
-		public static final String FILEPATH = "/home/omarsantana/IdeaProjects/labyrinth/labyrinth/src/assets/files/";
+		public static final String FILEPATH = "/root/IdeaProjects/labyrinth/labyrinth/src/assets/files/";
 		
 		public static final String USERSFILE = "users.txt";
 		
@@ -38,6 +38,7 @@ public class Config
 
 		public static final String[] FIELDS = new String[]{"Nombre de usuario?: ", "Contraseña?: ", "Nombre completo?: ", "Edad?: ", "DNI/NIF?: ", "Email?: ", "Direccion?: ", "Fecha de nacimiento?: "};
 
+	public static final String LABIRYNTHPATH = "/root/IdeaProjects/labyrinth/labyrinth/src/assets/files/labirynth";
 
 
 /**
