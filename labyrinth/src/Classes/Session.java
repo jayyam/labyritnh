@@ -132,15 +132,22 @@ public class Session
 		return found;
 	}
 
-	/**public void singupV1()
+	public void signupV1()
 
 	{
 		String username = Interface.getString("Nombre de usuario?: ");
 		if (checkUser(username)) 
 		{
-			System.out.println("\nEl usuario "+ username + " ya existe!");
-			return;
+			System.out.println("\nEl usuario "+username+" ya existe!");
 		}
+
+		/**ArrayList<String> users = readUsersFile(); // PASO 2
+		for (int i = 0; i < users.size(); i++) { // PASO 3
+			String[] currentUser = users.get(i).split("#");
+			if (username.equalsIgnoreCase(currentUser[0])) {
+				System.out.print("\nEl usuario ya existe\n");
+				return;
+			}*/
 		// paso4
 		String password = Interface.getString("Contraseña?: ");
 		String name = Interface.getString("Nombre completo?: ");
@@ -162,9 +169,9 @@ public class Session
 			System.out.println("error occurred.");
 		}
 	}
-*/
 
-	  public void signupV2() {
+
+	  /** public void signupV2() {
 	          String newUser = "\n";
 	          for (int i = 0; i < Config.FIELDS.length; i++) {
 	              String aux = Interface.getString(Config.FIELDS[i] + ": ");
@@ -183,7 +190,7 @@ public class Session
 	              System.out.print("\nHa ocurrido un error en el registro");
 	          }
 	      }
-
+*/
 
 	private boolean writeUser(String newUser) {
 		boolean success = false;

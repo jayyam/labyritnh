@@ -49,7 +49,7 @@ public class Main
 			}
 
 			case 2: {
-				Session.signupV2();
+				Session.signupV1();
 				Thread.sleep(Classes.Config.MILISECONDS);
 				break;
 			}
