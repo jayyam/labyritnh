@@ -1,7 +1,11 @@
 package Classes;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.File;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Labyrinth
 
 {
@@ -32,6 +36,7 @@ public class Labyrinth
 
     {
         listDirectory(); //(OPCION 2. METODO ABAJO)
+        //Seleccionar opcion
         /**
          * Flujo de programa (metodo):
          *
@@ -56,13 +61,38 @@ public class Labyrinth
 
     }
 
-    private File[] listDirectory() throws IOException {
+    private File[] listDirectory() throws IOException
+    {
         File[] files = new File[0];
         try {
-            files = new File(Config.LABIRYNTHPATH).listFiles();
-        } catch (Exception e) {
-            System.err.println("No se ha podido acceder al directorio de laberintos");
-        }
+                files = new File(Config.LABIRYNTHPATH).listFiles();
+            }
+        catch (Exception e)
+            {
+                System.err.println("No se ha podido acceder al directorio de laberintos");
+            }
         return files;
+    }
+
+    private ArrayList<String> readLabyFile(String name)
+    {
+            ArrayList<String> lines = new ArrayList<String>();
+            try
+            {
+                File myObj = new File(Config.LABIRYNTHPATH + name);
+                Scanner myReader = new Scanner(myObj);
+                while (myReader.hasNextLine())
+                    {
+                        String line = myReader.nextLine();
+                        lines.add(line);
+                    }
+                myReader.close();
+            }
+        catch (FileNotFoundException e)
+        {
+            System.out.println("Un error occurred.");
+            e.printStackTrace();
+        }
+        return lines;
     }
 }

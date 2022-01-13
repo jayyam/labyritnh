@@ -12,10 +12,14 @@ public class Config
 {		public static final int MILISECONDS = 2000;
 		
 		public static final String VERSION =  "v0.2.0";
+
 		public static final String FILEABSOLUTEPATH = "./assets/files";
 		public static final String FILEPATH = "/root/IdeaProjects/labyrinth/labyrinth/src/assets/files/";
-		
 		public static final String USERSFILE = "users.txt";
+
+		public static final String LABIRYNTHPATH = "/root/IdeaProjects/labyrinth/labyrinth/src/assets/files/labirynth";
+		public static final String LABI1 = "labyrinth/src/assets/files/labirynth/laberinto1.txt";
+		public static final String LABI2 = "labyrinth/src/assets/files/labirynth/laberinto2.txt";
 		
 		public static final String WELCOME = "Bienvenido al resolvedor de laberintos....descripcion que me guste";
 		public static final String GOODBYE = "\nFin de Programa!";
@@ -37,9 +41,6 @@ public class Config
 												+ "0- Salir\n";
 
 		public static final String[] FIELDS = new String[]{"Nombre de usuario?: ", "Contraseña?: ", "Nombre completo?: ", "Edad?: ", "DNI/NIF?: ", "Email?: ", "Direccion?: ", "Fecha de nacimiento?: "};
-
-		public static final String LABIRYNTHPATH = "/root/IdeaProjects/labyrinth/labyrinth/src/assets/files/labirynth";
-
 
 /**
  currentUser.username = "omarsantana";

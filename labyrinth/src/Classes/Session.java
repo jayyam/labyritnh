@@ -120,7 +120,7 @@ public class Session
 		boolean found = false;
 		ArrayList<String> users = readUserFile(); // Paso 2
 
-		for (int i = 0; i <= users.size(); i++) // Paso 3
+		for (int i = 0; i < users.size(); i++) // Paso 3
 		{
 			String[] currentUser = users.get(i).split("#");
 			if (username.equalsIgnoreCase(currentUser[0])) {
@@ -139,6 +139,7 @@ public class Session
 		if (checkUser(username)) 
 		{
 			System.out.println("\nEl usuario "+username+" ya existe!");
+			return;
 		}
 
 		/**ArrayList<String> users = readUsersFile(); // PASO 2
