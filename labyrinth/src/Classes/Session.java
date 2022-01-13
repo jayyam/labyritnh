@@ -1,7 +1,7 @@
 /**
  * Session.java
  * Clase del sistema para resolver las sesiones
- * DMS/OAGS - 2021/22
+ * OAGS - 2021/22
  * version 0.1.0
  */
 

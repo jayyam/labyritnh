@@ -1,3 +1,10 @@
+/**
+ * Labyrinth.java
+ * Clase user para usar constructor
+ * OAGS - 2021/22
+ * version 0.1.0
+ */
+
 package Classes;
 
 import java.io.FileNotFoundException;

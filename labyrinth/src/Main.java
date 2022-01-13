@@ -1,5 +1,3 @@
-
-
 /**
  * Main.java
  * Clase principal del sistema para resolver un laberinto
@@ -66,7 +64,6 @@ public class Main
 		{
 
 			case 0: {
-
 				Thread.sleep(Classes.Config.MILISECONDS);
 				break;
 			}

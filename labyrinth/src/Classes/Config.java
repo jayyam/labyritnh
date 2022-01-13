@@ -3,7 +3,7 @@ package Classes;
 /**
  * Config.java
  * Clase que contiene los menus
- * DMS/OAGS - 2021/22
+ * OAGS - 2021/22
  * version 0.1.0
  */
 
@@ -18,19 +18,19 @@ public class Config
 		public static final String USERSFILE = "users.txt";
 
 		public static final String LABIRYNTHPATH = "/root/IdeaProjects/labyrinth/labyrinth/src/assets/files/labirynth";
-		public static final String LABI1 = "labyrinth/src/assets/files/labirynth/laberinto1.txt";
-		public static final String LABI2 = "labyrinth/src/assets/files/labirynth/laberinto2.txt";
+		//public static final String LABI1 = "labyrinth/src/assets/files/labirynth/laberinto1.txt";
+		//public static final String LABI2 = "labyrinth/src/assets/files/labirynth/laberinto2.txt";
 		
-		public static final String WELCOME = "Bienvenido al resolvedor de laberintos....descripcion que me guste";
+		public static final String WELCOME = "Bienvenidos al algoritmo para resolver laberintos.\nEste programa utiliza un pathfinder para resolver\nlaberintos almacenados o generados aleatoriamente.\n";
 		public static final String GOODBYE = "\nFin de Programa!";
 		
-		public static final String UNLOGGEDMENU = "\nMENU Unlogeado\n"
+		public static final String UNLOGGEDMENU = "\nMENU DE INICIO\n"
 												+ "-------------------\n"
 												+ "1- Iniciar Sesion\n"
 											    + "2- Registro\n"
 											    + "0- Salir\n";
 		
-		public static final String LOGGEDMENU   = "\nMENU LOGEADO\n\n"
+		public static final String LOGGEDMENU   = "\nOPCIONES DE PROGRAMA\n\n"
 												+ "-------------------\n"
 												+ "1- Cargar Laberinto\n"
 												+ "2- Ver laberinto\n"
