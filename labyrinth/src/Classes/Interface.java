@@ -74,7 +74,7 @@ public class Interface
 */
 
 	// Metodo para que pida una accion para continuar
-	// Version 2
+	// Version 2.0
 	public static void toContinue() {
 		System.out.print("\nPulse 'enter' para continuar");
 		try {
