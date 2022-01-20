@@ -48,21 +48,21 @@ public class Session
 		String password = Interface.getString("Introduzca contraseña: ");
 
 		ArrayList<String> users = readUserFile();
-		//System.out.println("A");
+		//System.out.println("A");//test
 		for (int i = 0; i < users.size(); i++) {
 			String[] currentUser = users.get(i).split("#");
-			//System.out.println("B " + users.get(i));
+			//System.out.println("B " + users.get(i));//test
 			if (username.equalsIgnoreCase(currentUser[0]) && password.equals(currentUser[1])) {
-				//System.out.println("C");
+				//System.out.println("C");//test
 				logged = true;
 				setUser(currentUser);
 				System.out.println(username + "\nHa iniciado sesion con exito!");
 				break;
 			}
 		}
-		//System.out.println("D");
+		//System.out.println("D");//test
 		if (!logged) {
-			//System.out.println("Z");
+			//System.out.println("Z");//test
 			System.err.println(username + "\nUsuario o Contraseña incorrecto!");
 		}
 	}
