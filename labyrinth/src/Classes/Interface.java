@@ -65,10 +65,21 @@ public class Interface
 		return value;
 	}
 	
-	// Metodo para que pida una accion para continuar
+	/** Metodo para que pida una accion para continuar
 	public static void toContinue() 
 	{
 		System.out.print("\nIntroduzca cualquier tecla para continuar ");
 		keyboard.next();
+	}
+*/
+
+	// Metodo para que pida una accion para continuar
+	// Version 2
+	public static void toContinue() {
+		System.out.print("\nPulse 'enter' para continuar");
+		try {
+			System.in.read();
+		} catch (Exception e) {
+		}
 	}
 }
