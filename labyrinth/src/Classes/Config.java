@@ -14,10 +14,10 @@ public class Config
 		public static final String VERSION =  "v0.2.0";
 
 		public static final String FILEABSOLUTEPATH = "./assets/files";
-		public static final String FILEPATH = "/home/omarsantana/IdeaProjects/labyrinth/labyrinth/src/assets/files/";
+		public static final String FILEPATH = "/root/IdeaProjects/labyrinth/labyrinth/src/assets/files/";
 		public static final String USERSFILE = "users.txt";
 
-		public static final String LABIRYNTHPATH = "/home/omarsantana/IdeaProjects/labyrinth/labyrinth/src/assets/files/";
+		public static final String LABIRYNTHPATH = "/root/IdeaProjects/labyrinth/labyrinth/src/assets/files/labirynth";
 		//public static final String LABI1 = "labyrinth/src/assets/files/labirynth/laberinto1.txt";
 		//public static final String LABI2 = "labyrinth/src/assets/files/labirynth/laberinto2.txt";
 		

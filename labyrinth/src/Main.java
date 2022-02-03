@@ -7,14 +7,15 @@
 
 import Classes.Labyrinth;
 
+import java.io.IOException;
+
 public class Main
 
 {
 	public static Classes.Session Session = new Classes.Session();
+	public static Classes.Labyrinth Laby = new Classes.Labyrinth();
 
-	public static void main(String[] args) throws InterruptedException
-
-	{
+	public static void main(String[] args) throws InterruptedException, IOException {
 		System.out.println("Version actual: " + Classes.Config.VERSION);
 		System.out.println(Classes.Config.WELCOME);
 
@@ -55,9 +56,7 @@ public class Main
 		}
 	}
 
-	private static void loggedAction(int option) throws InterruptedException
-
-	{
+	private static void loggedAction(int option) throws InterruptedException, IOException {
 
 		switch (option)
 
@@ -68,7 +67,7 @@ public class Main
 				break;
 			}
 			case 1: {
-				System.out.println("\nLOGIN PROXIMAMENTE\n");
+				Laby.loadLabyrinth();
 				Thread.sleep(Classes.Config.MILISECONDS);
 				break;
 			}
