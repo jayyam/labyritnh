@@ -7,9 +7,9 @@
 
 package Classes;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -42,7 +42,7 @@ public class Labyrinth
             }
         if( option < 0 || option > archives.length)
         {
-            System.err.println("Opcion interrumpida no valida");
+            System.err.println("Opcion introducida no valida");
             return;
         }
 
@@ -59,9 +59,9 @@ public class Labyrinth
                     map[i][j]=lines.get(i).charAt(j);
                 }
         }
-        filename = archives[option -1 ].getName();
+        filename = archives[option - 1].getName();
         loaded = true;
-
+        System.out.println(filename+" CARGADO CORRECTAMENTE");
     }
 
     public void showMap() throws IOException, InterruptedException
