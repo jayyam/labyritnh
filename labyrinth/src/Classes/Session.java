@@ -219,3 +219,11 @@ public class Session
 		user.role = currentUser[8];
 	}
 }
+/**
+ *   = 0 = Final
+ * ^ = 1 = Arriba = i-1
+ * v = 2 = Abajo = i+1
+ * < = 3 = Izquierda = j-1
+ * > = 4 = Derecha = j+1
+ *   = 5 = Sin Salida = eliminar del array lo contado hasta volver a donde te permita seguir
+ * */

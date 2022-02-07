@@ -20,6 +20,8 @@ public class Labyrinth
     private String filename;
     private boolean loaded;
     private int startI, startJ, endI, endJ;
+    //private ArrayList<Coordinate> path = new ArrayList<Coordinate>(); //v1.0.0
+
 
     public Labyrinth()
     {
@@ -67,7 +69,7 @@ public class Labyrinth
     public void showMap() throws IOException, InterruptedException
 
     {
-
+        System.out.println("Aqui hay que imprimir un mensaje con el nombre y el txt del contenido del laberinto " + Config.LABI1);
     }
 
     public void setEntranceExit() throws IOException, InterruptedException
@@ -80,7 +82,8 @@ public class Labyrinth
 
     {
         File[] files = new File[0];
-        try {
+        try
+        {
             files = new File(Config.LABIRYNTHPATH).listFiles();
         }
         catch (Exception e)

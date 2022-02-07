@@ -14,6 +14,7 @@ public class Main
 {
 	public static Classes.Session Session = new Classes.Session();
 	public static Classes.Labyrinth Laby = new Classes.Labyrinth();
+	public static Classes.Labyrinth Showpic = new Classes.Labyrinth();
 
 	public static void main(String[] args) throws InterruptedException, IOException {
 		System.out.println("Version actual: " + Classes.Config.VERSION);
@@ -72,7 +73,7 @@ public class Main
 				break;
 			}
 			case 2: {
-				System.out.println("\nLOGIN PROXIMAMENTE\n");
+				Showpic.showMap();
 				Thread.sleep(Classes.Config.MILISECONDS);
 				break;
 			}
