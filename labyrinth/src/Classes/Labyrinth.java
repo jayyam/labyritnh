@@ -20,7 +20,7 @@ public class Labyrinth
     private String filename;
     private boolean loaded;
     private int startI, startJ, endI, endJ;
-    //private ArrayList<Coordinate> path = new ArrayList<Coordinate>(); //v1.0.0
+    private ArrayList<Coordinate> path = new ArrayList<Coordinate>(); //v1.0.0
 
 
     public Labyrinth()
