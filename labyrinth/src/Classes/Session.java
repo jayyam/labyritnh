@@ -2,7 +2,7 @@
  * Session.java
  * Clase del sistema para resolver las sesiones
  * OAGS - 2021/22
- * version 0.1.0
+ * version 0.2.0
  */
 
 package Classes;
@@ -17,7 +17,7 @@ import java.util.Scanner;
 public class Session
 
 {
-	private User user = new User();// declarando e inicializando el metodo
+	private User user = new User();// declarando e inicializando el objeto
 	private boolean logged;
 
 	public Session()// Constructor Session
@@ -26,7 +26,7 @@ public class Session
 		logged = false;
 	}
 
-	public boolean isLogged() // DEvuelve el estado actual de la sesion
+	public boolean isLogged() // Devuelve el estado actual de la sesion
 
 	{
 		return logged;

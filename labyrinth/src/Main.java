@@ -78,17 +78,17 @@ public class Main
 				break;
 			}
 			case 3: {
-				System.out.println("\nLOGIN PROXIMAMENTE\n");
+				System.out.println("\nPROXIMAMENTE\n");
 				Thread.sleep(Classes.Config.MILISECONDS);
 				break;
 			}
 			case 4: {
-				System.out.println("\nLOGIN PROXIMAMENTE\n");
+				System.out.println("\nPROXIMAMENTE\n");
 				Thread.sleep(Classes.Config.MILISECONDS);
 				break;
 			}
 			case 5: {
-				System.out.println("\nLOGIN PROXIMAMENTE\n");
+				System.out.println("\nPROXIMAMENTE\n");
 				Session.ShowUser();
 				Thread.sleep(Classes.Config.MILISECONDS);
 				break;

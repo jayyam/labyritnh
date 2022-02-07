@@ -4,7 +4,7 @@ package Classes;
  * Config.java
  * Clase que contiene los menus
  * OAGS - 2021/22
- * version 0.1.0
+ * version 0.2.0
  */
 
 public class Config

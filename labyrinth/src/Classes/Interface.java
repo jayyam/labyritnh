@@ -2,7 +2,7 @@
  * Interface.java
  * Clase dada por el profesor
  * OAGS - 2021/22
- * version 0.1.0
+ * version 0.2.0
  */
 package Classes;
 
