@@ -12,9 +12,9 @@ import java.io.IOException;
 public class Main
 
 {
-	public static Classes.Session Session = new Classes.Session();
-	public static Classes.Labyrinth Laby = new Classes.Labyrinth();
-	public static Classes.Labyrinth Showpic = new Classes.Labyrinth();
+	public static Classes.Session Session = new Classes.Session();//Objeto creado de la clase session
+	public static Classes.Labyrinth Laby = new Classes.Labyrinth();//Objeto que se crea de la clase labyrinth
+
 
 	public static void main(String[] args) throws InterruptedException, IOException {
 		System.out.println("Version actual: " + Classes.Config.VERSION);
@@ -73,7 +73,7 @@ public class Main
 				break;
 			}
 			case 2: {
-				Showpic.showMap();
+				Laby.showMap();
 				Thread.sleep(Classes.Config.MILISECONDS);
 				break;
 			}
