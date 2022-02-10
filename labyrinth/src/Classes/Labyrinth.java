@@ -69,13 +69,38 @@ public class Labyrinth
     public void showMap() throws IOException, InterruptedException
 
     {
-        System.out.println("Aqui hay que imprimir un mensaje con el nombre y el txt del contenido del laberinto " + Config.LABI1);
+        System.out.println(map);
     }
 
     public void setEntranceExit() throws IOException, InterruptedException
 
     {
-
+        //si loaded == false --> ERROR --> FIN
+        for(int i = 0; i < map.length;i++){
+            for(int j = 0; j < map[i].length; j++){
+                if(startI == i && startJ == j ){
+                    System.out.print("E ");
+                }else if (endI == i && endJ == j){
+                    System.out.print("S ");
+                }else{
+                    System.out.print(map[i][j] + " ");
+                }
+                System.out.println();
+            }
+        }
+        /**
+          si (loaded == false) --> error --> fin
+         -pedir i y j de entrada (crear las variables, todavia no meterlas en las generales)
+                si (i o j son < 0)                            |
+                si (i o j son >= longitud de las dimensiones) | ERROR --> FIN
+                si (map[sI][sJ] == '#')
+          Pedir i y j de salida
+          a- "las mismas de arriba "			|
+          b- "las mismas de arriba "			| ERROR --> FIN
+          c- "las mismas de arriba"			|
+          d- Si eI == sI && eJ == sJ   		|
+         -Meter valores en startI,startJ,endI,endJ
+     */
     }
 
     private File[] listDirectory() throws IOException

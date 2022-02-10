@@ -18,9 +18,7 @@ public class Config
 		public static final String USERSFILE = "users.txt";
 
 		public static final String LABIRYNTHPATH = "/root/IdeaProjects/labyrinth/labyrinth/src/assets/files/labirynth/";
-		public static final String LABI1 = "labyrinth/src/assets/files/labirynth/laberinto1.txt";
-		public static final String LABI2 = "labyrinth/src/assets/files/labirynth/laberinto2.txt";
-		
+
 		public static final String WELCOME = "Bienvenidos al algoritmo para resolver laberintos.\nEste programa utiliza un pathfinder para resolver\nlaberintos almacenados o generados aleatoriamente.\n";
 		public static final String GOODBYE = "\nFin de Programa!";
 		
