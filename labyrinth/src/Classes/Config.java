@@ -14,7 +14,7 @@ public class Config
 		public static final String VERSION =  "v0.2.0";
 
 		public static final String FILEABSOLUTEPATH = "./assets/files";
-		public static final String FILEPATH = "/home/omarsantana/IdeaProjects/labyrinth/labyrinth/src/assets/files/users.txt";
+		public static final String FILEPATH = "/home/omarsantana/IdeaProjects/labyrinth/labyrinth/src/assets/files/";
 		public static final String USERSFILE = "users.txt";
 
 		public static final String LABIRYNTHPATH = "/home/omarsantana/IdeaProjects/labyrinth/labyrinth/src/assets/files/labirynth";
