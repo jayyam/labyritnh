@@ -62,7 +62,6 @@ public class Main
 		switch (option)
 
 		{
-
 			case 0: {
 				Thread.sleep(Classes.Config.MILISECONDS);
 				break;
@@ -73,6 +72,7 @@ public class Main
 				break;
 			}
 			case 2: {
+				System.out.println("Laberinto mostrado: ");
 				Laby.showMap();
 				Thread.sleep(Classes.Config.MILISECONDS);
 				break;
