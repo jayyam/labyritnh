@@ -107,23 +107,65 @@ public class Labyrinth
 
          -Meter valores en startI,startJ,endI,endJ
         */
+        do {
+            Scanner keyboard = new Scanner(System.in);
+            System.out.println("Introduzca coordenada de fila de entrada (i): ");
+            int iE = keyboard.nextInt();
+            if (iE < 0 || iE >= map.length || map.length == '#')
+            {
+                System.err.println("Coordenadas no validas.");
+            }
+            else
+            {
+                startI = iE;
+            }
 
-        System.out.println("Introduzca coordenada de fila de entrada (i): ");
-        Scanner keyboard = new Scanner(System.in);
-        int iE = keyboard.nextInt();
-        System.out.println("Introduzca coordenada de columna de entrada (j): ");
-        int jE = keyboard.nextInt();
-        System.out.println("Introduzca coordenada de fila de salida (i): ");
-        int iS = keyboard.nextInt();
-        System.out.println("Introduzca coordenada de columna dfe salida (j): ");
-        int jS = keyboard.nextInt();
-        if (iE < 0 || iE >= map.length || map.length== '#')
-        {
-            System.err.println("Coordenadas no validas");
+            System.out.println("Introduzca coordenada de columna de entrada (j): ");
+            int jE = keyboard.nextInt();
+            if (jE < 0 || jE >= map.length || map.length == '#')
+            {
+                System.err.println("Coordenadas no validas.");
+            }
+            else
+            {
+                startJ = jE;
+            }
+
+            System.out.println("Introduzca coordenada de fila de salida (i): ");
+            int iS = keyboard.nextInt();
+            if (iS < 0 || iS >= map.length || map.length == '#')
+            {
+                System.err.println("Coordenadas no validas.");
+            }
+            else
+            {
+                startJ = iS;
+            }
+
+            System.out.println("Introduzca coordenada de columna dfe salida (j): ");
+            int jS = keyboard.nextInt();
+            if (jE < 0 || jE >= map.length || map.length == '#')
+            {
+                System.err.println("Coordenadas no validas.");
+            }
+            else
+            {
+                startJ = jS;
+            }
+
+            if (iE < 0 || jS >= map.length || map.length == '#')
+            {
+                System.err.println("Coordenadas no validas.");
+            }
+            else
+            {
+                startJ = jS;
+            }
+            keyboard.close();
+            showMap();
         }
 
-
-
+        while (loaded == true);
     }
 
     private File[] listDirectory() throws IOException

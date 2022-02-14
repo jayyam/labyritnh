@@ -78,7 +78,7 @@ public class Main
 				break;
 			}
 			case 3: {
-				System.out.println("\nPROXIMAMENTE\n");
+				Laby.setEntranceExit();
 				Thread.sleep(Classes.Config.MILISECONDS);
 				break;
 			}
