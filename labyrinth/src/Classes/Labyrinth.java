@@ -91,9 +91,9 @@ public class Labyrinth
     public void setEntranceExit() throws IOException, InterruptedException
 
     {
-        //si loaded == false --> ERROR --> FIN
         /**
-          si (loaded == false) --> error --> fin
+         si loaded == false --> ERROR --> FIN
+
          -pedir i y j de entrada (crear las variables, todavia no meterlas en las generales)
                 si (i o j son < 0)                            |
                 si (i o j son >= longitud de las dimensiones) | ERROR --> FIN
@@ -106,7 +106,24 @@ public class Labyrinth
                 d- Si eI == sI && eJ == sJ   		|
 
          -Meter valores en startI,startJ,endI,endJ
-     */
+        */
+
+        System.out.println("Introduzca coordenada de fila de entrada (i): ");
+        Scanner keyboard = new Scanner(System.in);
+        int iE = keyboard.nextInt();
+        System.out.println("Introduzca coordenada de columna de entrada (j): ");
+        int jE = keyboard.nextInt();
+        System.out.println("Introduzca coordenada de fila de salida (i): ");
+        int iS = keyboard.nextInt();
+        System.out.println("Introduzca coordenada de columna dfe salida (j): ");
+        int jS = keyboard.nextInt();
+        if (iE < 0 || iE >= map.length || map.length== '#')
+        {
+            System.err.println("Coordenadas no validas");
+        }
+
+
+
     }
 
     private File[] listDirectory() throws IOException
