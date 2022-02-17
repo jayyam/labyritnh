@@ -1,5 +1,5 @@
 /**
- * Labyrinth.java
+ * Labyrinth.java.
  * Clase user para usar constructor
  * OAGS - 2021/22
  * version 0.2.0
