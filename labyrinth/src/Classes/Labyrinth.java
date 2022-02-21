@@ -85,15 +85,11 @@ public class Labyrinth {
         else
         {
             int iE = Interface.getInt("Introduzca coordenada de fila de entrada (i): ");
-            //if (iE < 0 || iE >= map.length || map[][] = '#')
-            {
-                System.err.println("Coordenadas no validas.");
-            }
-
             int jE = Interface.getInt("Introduzca coordenada de fila de entrada (i): ");
-            if (jE < 0 || jE >= map.length || map.length == '#')
+            if (iE < 0 || iE >= map.length || jE < 0 || jE >= map.length || map[iE][jE] != ' ')
             {
                 System.err.println("Coordenadas no validas.");
+                return;
             }
 
             int iS = Interface.getInt("Introduzca coordenada de fila de entrada (i): ");
