@@ -80,28 +80,24 @@ public class Labyrinth {
 
         if (loaded == false)
         {
-            System.err.print("No se ha cargado el lab");
+            System.err.print("No se ha cargado el laberinto");
         }
         else
         {
             int iE = Interface.getInt("Introduzca coordenada de fila de entrada (i): ");
-            int jE = Interface.getInt("Introduzca coordenada de fila de entrada (i): ");
+            int jE = Interface.getInt("Introduzca coordenada de columna de entrada (j): ");
             if (iE < 0 || iE >= map.length || jE < 0 || jE >= map.length || map[iE][jE] != ' ')
             {
-                System.err.println("Coordenadas no validas.");
+                System.err.println("Coordenada no valida.");
                 return;
             }
 
-            int iS = Interface.getInt("Introduzca coordenada de fila de entrada (i): ");
-            if (iS < 0 || iS >= map.length || map.length == '#')
+            int iS = Interface.getInt("Introduzca coordenada de fila de salida (i): ");
+            int jS = Interface.getInt("Introduzca coordenada de columna de salida (j): ");
+            if (iS < 0 || iS>= map.length || jS < 0 || jS >= map.length || map[iS][jS] != ' ')
             {
-                System.err.println("Coordenadas no validas.");
-            }
-
-            int jS = Interface.getInt("Introduzca coordenada de fila de entrada (i): ");
-            if (jE < 0 || jS >= map.length || map.length == '#')
-            {
-                System.err.println("Coordenadas no validas.");
+                System.err.println("Coordenada no valida.");
+                return;
             }
                 startI = iE;
                 startJ = jE;
