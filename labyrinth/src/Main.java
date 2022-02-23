@@ -1,5 +1,5 @@
 /**
- * Main.java
+ * Main.java.
  * Clase principal del sistema para resolver un laberinto
  * DMS/OAGS - 2021/22
  * version 0.2.0
@@ -12,9 +12,9 @@ import java.io.IOException;
 public class Main
 
 {
-	public static Classes.Session Session = new Classes.Session();
-	public static Classes.Labyrinth Laby = new Classes.Labyrinth();
-	public static Classes.Labyrinth Showpic = new Classes.Labyrinth();
+	public static Classes.Session Session = new Classes.Session();//Objeto creado de la clase session
+	public static Classes.Labyrinth Laby = new Classes.Labyrinth();//Objeto que se crea de la clase labyrinth
+
 
 	public static void main(String[] args) throws InterruptedException, IOException {
 		System.out.println("Version actual: " + Classes.Config.VERSION);
@@ -62,7 +62,6 @@ public class Main
 		switch (option)
 
 		{
-
 			case 0: {
 				Thread.sleep(Classes.Config.MILISECONDS);
 				break;
@@ -73,12 +72,13 @@ public class Main
 				break;
 			}
 			case 2: {
-				Showpic.showMap();
+				System.out.println("Laberinto mostrado: ");
+				Laby.showMap();
 				Thread.sleep(Classes.Config.MILISECONDS);
 				break;
 			}
 			case 3: {
-				System.out.println("\nPROXIMAMENTE\n");
+				Laby.setEntranceExit();
 				Thread.sleep(Classes.Config.MILISECONDS);
 				break;
 			}

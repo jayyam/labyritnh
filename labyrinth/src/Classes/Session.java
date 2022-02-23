@@ -1,5 +1,5 @@
 /**
- * Session.java
+ * Session.java.
  * Clase del sistema para resolver las sesiones
  * OAGS - 2021/22
  * version 0.2.0

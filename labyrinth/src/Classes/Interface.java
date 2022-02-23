@@ -1,5 +1,5 @@
 /**
- * Interface.java
+ * Interface.java.
  * Clase dada por el profesor
  * OAGS - 2021/22
  * version 0.2.0
