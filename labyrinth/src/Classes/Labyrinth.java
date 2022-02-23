@@ -55,26 +55,35 @@ public class Labyrinth {
         System.out.println(filename + " CARGADO CORRECTAMENTE");
     }
 
-    public void showMap() throws IOException, InterruptedException {
-        for (int i = 0; i < map.length; i++) {
-            for (int j = 0; j < map[i].length; j++)
+    public void showMap() throws IOException, InterruptedException
+{
+        if (loaded == false)
+        {
+            System.err.print("No se ha cargado el laberinto");
+        }
+        else
+        {
+            for (int i = 0; i < map.length; i++)
             {
-                if (startI == i && startJ == j)
+                for (int j = 0; j < map[i].length; j++)
                 {
-                    System.out.print("E ");
+                    if (startI == i && startJ == j)
+                {
+                        System.out.print("E ");
                 }
-                else if (endI == i && endJ == j)
+                    else if (endI == i && endJ == j)
                 {
-                    System.out.print("S ");
+                        System.out.print("S ");
                 }
                 else
                 {
                     System.out.print(map[i][j] + " ");
                 }
             }
-            System.out.println();
         }
+            System.out.println();
     }
+}
 
     public void setEntranceExit() throws IOException, InterruptedException {
 
