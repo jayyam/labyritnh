@@ -2,10 +2,8 @@
  * Main.java.
  * Clase principal del sistema para resolver un laberinto
  * DMS/OAGS - 2021/22
- * version 0.2.0
+ * version v1.0.0
  */
-
-import Classes.Labyrinth;
 
 import java.io.IOException;
 

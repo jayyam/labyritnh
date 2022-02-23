@@ -2,7 +2,7 @@
  * Labyrinth.java.
  * Clase user para usar constructor
  * OAGS - 2021/22
- * version 0.2.0
+ * version v1.0.0
  */
 
 package Classes;
