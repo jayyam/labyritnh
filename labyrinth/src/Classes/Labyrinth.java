@@ -83,22 +83,34 @@ public class Labyrinth {
         return files;
     }
 
-    public void showMap() throws IOException, InterruptedException {
-        if (loaded == false) {
+    public void showMap() throws IOException, InterruptedException
+    {
+        if (loaded == false)
+        {
             System.err.print("No se ha cargado el laberinto");
         }
-        for (int i = 0; i < map.length; i++) {
-            for (int j = 0; j < map[i].length; j++) {
-                if ((startI == i && startJ == j) && map[i][j] == ' ') {
-                    System.out.print("E ");
-                } else if ((endI == i && endJ == j) && map[i][j] == ' ') {
-                    System.out.print("S ");
-                } else {
-                    System.out.print(map[i][j] + " ");
-                }
+        else
+        {
+            for (int i = 0; i < map.length; i++)
+            {
+                    for (int j = 0; j < map[i].length; j++)
+                    {
+                        if ((startI == i && startJ == j) && map[i][j] == ' ')
+                        {
+                            System.out.print("E ");
+                        }
+                        else if ((endI == i && endJ == j) && map[i][j] == ' ')
+                        {
+                            System.out.print("S ");
+                        }
+                        else
+                        {
+                            System.out.print(map[i][j] + " ");
+                        }
+                    }
             }
-        }
         System.out.println();
+        }
     }
 
     public void setEntranceExit() throws IOException, InterruptedException {
