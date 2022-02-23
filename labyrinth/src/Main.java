@@ -70,7 +70,6 @@ public class Main
 				break;
 			}
 			case 2: {
-				//System.out.println("Laberinto mostrado: \n"); +Config.LABIRYNTHPATH/FILENAME"
 				Laby.showMap();
 				Thread.sleep(Classes.Config.MILISECONDS);
 				break;

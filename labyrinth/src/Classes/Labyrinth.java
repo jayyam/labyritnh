@@ -18,9 +18,11 @@ public class Labyrinth {
     private String filename;
     private boolean loaded;
     private int startI, startJ, endI, endJ;
+    private ArrayList<Coordinate> path = new ArrayList<Coordinate>();
 
 
-    public Labyrinth() {
+    public Labyrinth()
+    {
         loaded = false;
     }
 
@@ -55,92 +57,6 @@ public class Labyrinth {
         System.out.println(filename + " CARGADO CORRECTAMENTE");
     }
 
-    public void showMap() throws IOException, InterruptedException
-{
-        if (loaded == false)
-        {
-            System.err.print("No se ha cargado el laberinto");
-        }
-        else
-        {
-            for (int i = 0; i < map.length; i++)
-            {
-                for (int j = 0; j < map[i].length; j++)
-                {
-                    if (startI == i && startJ == j)
-                {
-                        System.out.print("E ");
-                }
-                    else if (endI == i && endJ == j)
-                {
-                        System.out.print("S ");
-                }
-                else
-                {
-                    System.out.print(map[i][j] + " ");
-                }
-            }
-        }
-            System.out.println();
-    }
-}
-
-    public void setEntranceExit() throws IOException, InterruptedException {
-
-        if (loaded == false)
-        {
-            System.err.print("No se ha cargado el laberinto");
-        }
-        else
-        {
-            int iE = Interface.getInt("Introduzca coordenada de fila de entrada (i): ");
-            int jE = Interface.getInt("Introduzca coordenada de columna de entrada (j): ");
-            if (iE < 0 || iE >= map.length || jE < 0 || jE >= map.length || map[iE][jE] != ' ')
-            {
-                System.err.println("Coordenada no valida.");
-                return;
-            }
-
-            int iS = Interface.getInt("Introduzca coordenada de fila de salida (i): ");
-            int jS = Interface.getInt("Introduzca coordenada de columna de salida (j): ");
-            if (iS < 0 || iS>= map.length || jS < 0 || jS >= map.length || map[iS][jS] != ' ')
-            {
-                System.err.println("Coordenada no valida.");
-                return;
-            }
-                startI = iE;
-                startJ = jE;
-                endI = iS;
-                endJ = jS;
-            }
-        /**
-         si loaded == false --> ERROR --> FIN
-
-         -pedir i y j de entrada (crear las variables, todavia no meterlas en las generales)
-         si (i o j son < 0)                            |
-         si (i o j son >= longitud de las dimensiones) | ERROR --> FIN
-         si (map[sI][sJ] == '#')                       |
-
-         Pedir i y j de salida
-         a- "las mismas de arriba "			|
-         b- "las mismas de arriba "			| ERROR --> FIN
-         c- "las mismas de arriba"			|
-         d- Si eI == sI && eJ == sJ   		|
-
-         -Meter valores en startI,startJ,endI,endJ
-         */
-        }
-
-    private File[] listDirectory() throws IOException {
-        File[] files = new File[0];
-        try {
-            files = new File(Config.LABIRYNTHPATH).listFiles();
-        } catch (Exception e) {
-            System.err.println("No se ha podido acceder al directorio de laberintos");
-        }
-        return files;
-    }
-
     private ArrayList<String> readLabyFile(String namefile) {
         ArrayList<String> lines = new ArrayList<String>();
         try {
@@ -157,6 +73,75 @@ public class Labyrinth {
         }
         return lines;
     }
+    private File[] listDirectory() throws IOException {
+        File[] files = new File[0];
+        try {
+            files = new File(Config.LABIRYNTHPATH).listFiles();
+        } catch (Exception e) {
+            System.err.println("No se ha podido acceder al directorio de laberintos");
+        }
+        return files;
+    }
+
+    public void showMap() throws IOException, InterruptedException {
+        if (loaded == false) {
+            System.err.print("No se ha cargado el laberinto");
+        }
+        for (int i = 0; i < map.length; i++) {
+            for (int j = 0; j < map[i].length; j++) {
+                if ((startI == i && startJ == j) && map[i][j] == ' ') {
+                    System.out.print("E ");
+                } else if ((endI == i && endJ == j) && map[i][j] == ' ') {
+                    System.out.print("S ");
+                } else {
+                    System.out.print(map[i][j] + " ");
+                }
+            }
+        }
+        System.out.println();
+    }
+
+    public void setEntranceExit() throws IOException, InterruptedException {
+
+        if (loaded == false) {
+            System.err.print("No se ha cargado el laberinto");
+        } else {
+            int iE = Interface.getInt("Introduzca coordenada de fila de entrada (i): ");
+            int jE = Interface.getInt("Introduzca coordenada de columna de entrada (j): ");
+            if (iE < 0 || iE >= map.length || jE < 0 || jE >= map.length || map[iE][jE] != ' ') {
+                System.err.println("Coordenada no valida.");
+                return;
+            }
+
+            int iS = Interface.getInt("Introduzca coordenada de fila de salida (i): ");
+            int jS = Interface.getInt("Introduzca coordenada de columna de salida (j): ");
+            if (iS < 0 || iS >= map.length || jS < 0 || jS >= map.length || map[iS][jS] != ' ') {
+                System.err.println("Coordenada no valida.");
+                return;
+            }
+            startI = iE;
+            startJ = jE;
+            endI = iS;
+            endJ = jS;
+        }
+        /**
+         si loaded == false --> ERROR --> FIN
+
+         -pedir i y j de entrada (crear las variables, todavia no meterlas en las generales)
+         si (i o j son < 0)                            |
+         si (i o j son >= longitud de las dimensiones) | ERROR --> FIN
+         si (map[sI][sJ] == '#')                       |
+
+         Pedir i y j de salida
+         a- "las mismas de arriba "			|
+         b- "las mismas de arriba "			| ERROR --> FIN
+         c- "las mismas de arriba"			|
+         d- Si eI == sI && eJ == sJ   		|
+
+         -Meter valores en startI,startJ,endI,endJ
+         */
+    }
+
 }
 
 /**

@@ -9,7 +9,7 @@ package Classes;
 
 public class Coordinate
 {
-    //private ArrayList<Coordinate> path = new ArrayList<Coordinate>(); //v1.0.0
+
 	/**
 	 *   = 0 = Final
 	 * ^ = 1 = Arriba = i-1
