@@ -103,12 +103,14 @@ public class Labyrinth {
                         {
                             System.out.print("E ");
                         }
-                        else if ((endI == i && endJ == j) && map[i][j] == ' ')
+                        else if (endI == i && endJ == j)
                         {
                             System.out.print("S ");
                         }
                         else
                         {
+                            ArrayList<Coordinate> path = new ArrayList<Coordinate>();
+                            //https://stackoverflow.com/questions/30551194/find-shortest-path-in-a-maze-with-recursive-algorithm
                             System.out.print(map[i][j] + " ");
                         }
                     }

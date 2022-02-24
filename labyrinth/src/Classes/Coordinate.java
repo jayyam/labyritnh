@@ -80,6 +80,14 @@ public class Coordinate
 		return nextCoordinate;
 	}
 /**
+	private boolean findPath(direction) {
+		// We have reached the end point, and solved the maze
+		if (location.equals(maze.getEndCoords())) {
+			System.out.println("Found path length: " + pathLength);
+			maze.setMazeArray(mazeArray);
+			return true;
+		}
+
 	 *   = 0 = Final
 	 * ^ = 1 = Arriba = i-1
 	 * v = 2 = Abajo = i+1
@@ -88,6 +96,6 @@ public class Coordinate
 	 *   = 5 = Sin Salida = eliminar del array lo contado hasta volver a donde te permita seguir
 	 *	if(Coordinate nextCell = getNextCell(path.get(path.size()-1)));
 	 *   Comprueba si nextCell es valida o no
- 	*
+     *
 	 * */
 }
