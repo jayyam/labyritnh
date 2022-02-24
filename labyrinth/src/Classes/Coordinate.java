@@ -12,12 +12,6 @@ public class Coordinate
 	public int i;
 	public int j;
 	public int direction;
-	private boolean loaded;
-
-	public Coordinate()
-	{
-		loaded = false;
-	}
 
 	public static void coordinateMenu()
 	{
@@ -47,12 +41,53 @@ public class Coordinate
 			}
 		}
 	}
-	/**
+
+	private Coordinate getNextCell(Coordinate currentCoordinate)
+	{
+		Coordinate nextCoordinate= new Coordinate();
+		nextCoordinate.i = currentCoordinate.i;
+		nextCoordinate.j = currentCoordinate.j;
+		nextCoordinate.direction = 0;
+
+		if(currentCoordinate.direction == 1)
+		{
+			//if(map[i][j] == ' ')
+				{
+					//^ = 1 = Arriba = i-1
+				}
+		}
+		else if(currentCoordinate.direction == 2)
+		{
+			//if(map[i][j] == ' ')
+			{
+				//v = 2 = Abajo = i+1
+			}
+		}
+		else if(currentCoordinate.direction == 3)
+		{
+			//if(map[i][j] == ' ')
+			{
+				//< = 3 = Izquierda = j-1
+			}
+		}
+		else if(currentCoordinate.direction == 4)
+		{
+			//if(map[i][j] == ' ')
+			{
+				//> = 4 = Derecha = j+1
+			}
+		}
+		return nextCoordinate;
+	}
+/**
 	 *   = 0 = Final
 	 * ^ = 1 = Arriba = i-1
 	 * v = 2 = Abajo = i+1
 	 * < = 3 = Izquierda = j-1
 	 * > = 4 = Derecha = j+1
 	 *   = 5 = Sin Salida = eliminar del array lo contado hasta volver a donde te permita seguir
+	 *	if(Coordinate nextCell = getNextCell(path.get(path.size()-1)));
+	 *   Comprueba si nextCell es valida o no
+ 	*
 	 * */
 }

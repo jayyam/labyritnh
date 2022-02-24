@@ -23,7 +23,7 @@ public class Session
 	public Session()// Constructor Session
 
 	{
-		logged = false;
+		logged = true;
 	}
 
 	public boolean isLogged() // Devuelve el estado actual de la sesion

@@ -99,7 +99,7 @@ public class Labyrinth {
             {
                     for (int j = 0; j < map[i].length; j++)
                     {
-                        if ((startI == i && startJ == j) && map[i][j] == ' ')
+                        if (startI == i && startJ == j)
                         {
                             System.out.print("E ");
                         }
@@ -112,8 +112,8 @@ public class Labyrinth {
                             System.out.print(map[i][j] + " ");
                         }
                     }
+                System.out.println();
             }
-        System.out.println();
         }
     }
 
