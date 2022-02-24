@@ -19,7 +19,11 @@ public class Labyrinth {
     private boolean loaded;
     private int startI, startJ, endI, endJ;
     private ArrayList<Coordinate> path = new ArrayList<Coordinate>();
-
+    /**
+     * PATH
+     * utilizará el algoritmo para guardar las coordenadas y dirección del camino a buscar
+     * para luego mostrarlo
+     * */
 
     public Labyrinth()
     {
@@ -68,7 +72,7 @@ public class Labyrinth {
             }
             myReader.close();
         } catch (FileNotFoundException e) {
-            System.out.println("Un error occurred.");
+            System.out.println("No se encontro archivo.");
             e.printStackTrace();
         }
         return lines;

@@ -11,13 +11,19 @@ public class Config
 
 {		public static final int MILISECONDS = 2000;
 		
-		public static final String VERSION =  "v0.2.0";
+		public static final String VERSION =  "v1.0.0";
 
 		public static final String FILEABSOLUTEPATH = "./assets/files";
 		public static final String FILEPATH = "/home/omarsantana/IdeaProjects/labyrinth/labyrinth/src/assets/files/";
 		public static final String USERSFILE = "users.txt";
 
 		public static final String LABIRYNTHPATH = "/home/omarsantana/IdeaProjects/labyrinth/labyrinth/src/assets/files/labirynth/";
+
+		public static final String MENUFINDPATH = "Selecciona un camino\n" +
+				                                  "------------------------\n" +
+												  "1 - El primer camino posible\n" +
+												  "2 - El camino mas corto\n" +
+												  "0 - Cancelar";
 
 		public static final String WELCOME = "Bienvenidos al algoritmo para resolver laberintos.\nEste programa utiliza un pathfinder para resolver\nlaberintos almacenados o generados aleatoriamente.\n";
 		public static final String GOODBYE = "\nFin de Programa!";

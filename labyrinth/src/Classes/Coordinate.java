@@ -9,7 +9,44 @@ package Classes;
 
 public class Coordinate
 {
+	public int i;
+	public int j;
+	public int direction;
+	private boolean loaded;
 
+	public Coordinate()
+	{
+		loaded = false;
+	}
+
+	public static void coordinateMenu()
+	{
+		System.out.println(Config.MENUFINDPATH);
+		for (int i = 0; i < 3; i++)
+		{
+			int option = Interface.getInt("Selecciona opcion: ");
+			if (option < 0 || option >= 3)
+			{
+				System.err.println("Opcion introducida no valida");
+				continue;
+			}
+			if (option == 0)
+			{
+				return;
+			}
+			else
+			{
+				if (option == 1)
+				{
+					//Primer camino encontrado
+				}
+				else
+				{
+					//Camino mas rapido
+				}
+			}
+		}
+	}
 	/**
 	 *   = 0 = Final
 	 * ^ = 1 = Arriba = i-1

@@ -5,6 +5,8 @@
  * version v1.0.0
  */
 
+import Classes.Coordinate;
+
 import java.io.IOException;
 
 public class Main
@@ -71,7 +73,7 @@ public class Main
 			}
 			case 2: {
 				Laby.showMap();
-				Thread.sleep(Classes.Config.MILISECONDS);
+				Thread.sleep(Classes.Config.MILISECONDS+4000);
 				break;
 			}
 			case 3: {
@@ -80,12 +82,11 @@ public class Main
 				break;
 			}
 			case 4: {
-				System.out.println("\nPROXIMAMENTE\n");
+				Coordinate.coordinateMenu();
 				Thread.sleep(Classes.Config.MILISECONDS);
 				break;
 			}
 			case 5: {
-				System.out.println("\nPROXIMAMENTE\n");
 				Session.ShowUser();
 				Thread.sleep(Classes.Config.MILISECONDS);
 				break;
@@ -93,7 +94,7 @@ public class Main
 			case 6: {
 				System.out.println("\nLOGIN Cerrando Sesion\n");
 				Session.logout();
-				Thread.sleep(Classes.Config.MILISECONDS);// time de espera antes despues de cerrrar sesion
+				Thread.sleep(Classes.Config.MILISECONDS);// time de espera antes despues de cerrar sesion
 				break;
 			}
 		}
