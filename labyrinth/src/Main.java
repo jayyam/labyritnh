@@ -73,7 +73,7 @@ public class Main
 			}
 			case 2: {
 				Laby.showMap();
-				Thread.sleep(Classes.Config.MILISECONDS+4000);
+				Thread.sleep(Classes.Config.MILISECONDS);
 				break;
 			}
 			case 3: {

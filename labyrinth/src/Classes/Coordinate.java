@@ -32,11 +32,11 @@ public class Coordinate
 			{
 				if (option == 1)
 				{
-					//Primer camino encontrado
+					//Metodo Primer camino encontrado
 				}
 				else
 				{
-					//Camino mas rapido
+					//Metodo Camino mas rapido
 				}
 			}
 		}
@@ -97,5 +97,27 @@ public class Coordinate
 	 *	if(Coordinate nextCell = getNextCell(path.get(path.size()-1)));
 	 *   Comprueba si nextCell es valida o no
      *
+ *
+ * Breadth-first search
+ *
+ *      queue.add(startNode)
+ *
+ * while not queue.isEmpty:
+ *           node = queue.remove()
+ *
+ *     if node is solution:
+ *         return
+ *     else:
+ *         queue.addAll(node.children)
+ *
+ * A couple of additional notes:
+ *     The above algorithms are suitable for trees: mazes that don't have loops.
+ *     If your mazes have loops then you'll need to make sure you don't revisit nodes you've already seen.
+ *     In that case, you'll need to add logic to keep track of all the already visited nodes
+ *     and avoid adding them onto the stack/queue a second time.
+ *
+ *     As written, these algorithms will find the target node
+ *     but they don't remember the path that got them there.
 	 * */
+
 }
