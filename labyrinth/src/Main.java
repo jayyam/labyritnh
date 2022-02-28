@@ -5,7 +5,7 @@
  * version v1.0.0
  */
 
-import Classes.Coordinate;
+import Classes.Config;
 
 import java.io.IOException;
 
@@ -63,38 +63,39 @@ public class Main
 
 		{
 			case 0: {
-				Thread.sleep(Classes.Config.MILISECONDS);
+				Thread.sleep(Config.MILISECONDS);
 				break;
 			}
 			case 1: {
 				Laby.loadLabyrinth();
-				Thread.sleep(Classes.Config.MILISECONDS);
+				Thread.sleep(Config.MILISECONDS);
 				break;
 			}
 			case 2: {
 				Laby.showMap();
-				Thread.sleep(Classes.Config.MILISECONDS);
+				Thread.sleep(Config.MILISECONDS);
 				break;
 			}
 			case 3: {
 				Laby.setEntranceExit();
-				Thread.sleep(Classes.Config.MILISECONDS);
+				Thread.sleep(Config.MILISECONDS);
 				break;
 			}
 			case 4: {
-				Coordinate.coordinateMenu();
-				Thread.sleep(Classes.Config.MILISECONDS);
+				Laby.coordinateMenu();
+				Thread.sleep(Config.MILISECONDS);
 				break;
 			}
+
 			case 5: {
 				Session.ShowUser();
-				Thread.sleep(Classes.Config.MILISECONDS);
+				Thread.sleep(Config.MILISECONDS);
 				break;
 			}
 			case 6: {
 				System.out.println("\nLOGIN Cerrando Sesion\n");
 				Session.logout();
-				Thread.sleep(Classes.Config.MILISECONDS);// time de espera antes despues de cerrar sesion
+				Thread.sleep(Config.MILISECONDS);// time de espera antes despues de cerrar sesion
 				break;
 			}
 		}
