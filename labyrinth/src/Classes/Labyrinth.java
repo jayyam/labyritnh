@@ -89,22 +89,40 @@ public class Labyrinth {
     }
 
     public void showMap() throws IOException, InterruptedException {
-        if (!loaded) {
+        if (!loaded)
+        {
             System.err.print("No se ha cargado el laberinto");
-        } else {
-            for (int i = 0; i < map.length; i++) {
+        }
+        else
+        {
+            for (int i = 0; i < map.length; i++)
+            {
                 for (int j = 0; j < map[i].length; j++)
                 {
-                    if (startI == i && startJ == j) {
+                    if (startI == i && startJ == j)
+                    {
                         System.out.print("E ");
                         continue;
-                    } else if (endI == i && endJ == j) {
+                    }
+                    else if (endI == i && endJ == j)
+                    {
                         System.out.print("S ");
                         continue;
-                    } else {
-                        for(int k = 0; k < path.size(); k++){
-                            if() { //Comprobar si en la posicion "k", la i coincide con la i y la j con la j
-
+                    }
+                    else
+                    {
+                        for(int k = 0; k < path.size(); k++)
+                        {
+                            if(path.get(k).i == i && path.get(k).j == j)
+                            {
+                                if  (path.get(k).direction == 1)
+                                {System.out.print('^');}
+                                else if (path.get(k).direction == 2)
+                                {System.out.print('v');}
+                                else if (path.get(k).direction == 3)
+                                {System.out.print('<');}
+                                else if (path.get(k).direction == 4)
+                                {System.out.print('>');}
                             }
                         }
                     }
@@ -153,12 +171,13 @@ public class Labyrinth {
             } else {
                 if (option == 1) {
                     //Metodo Primer camino encontrado
-                    if (startI == startJ && endI == endJ)//No se han establecido las casillas de entrada y salida
+                    if (startI == endI && startJ == endJ)//No se han establecido las casillas de entrada y salida
                     {
                         System.err.print("Debe establecer las casillas de entrada y salida");
                     } else if (findFirstPath()) {
                         System.out.println("Primer camino encontrado");
                         showMap();
+                        System.out.print(path.size());
                     } else {
                         System.err.println("No se ha encontrado camino");
                     }
@@ -179,21 +198,26 @@ public class Labyrinth {
         startCell.j = startJ;//entrando en el path la casilla de inicio (i)
         startCell.direction = 0;//Estableciendo la direccion de inicio en 0
 
+        path.add(startCell);//iniciando el path
+
         while (!found && path.size() > 0) {
             path.get(path.size() - 1).direction += 1;//posicion inicial del laberinto incrementado en 1 posicion
 
-            if (path.get(path.size() - 1).direction <= 4)
-                ;//comprobando entre 0 y 4 la direccion a moverse tras incrementar 1 posicion
+            if (path.get(path.size() - 1).direction <= 4)//comprobando entre 0 y 4 la direccion a moverse tras incrementar 1 posicion
             {
                 Coordinate nextCell = setNextCell(path.get(path.size() - 1));
-                if (checkCell(nextCell)) {
+                if (checkCell(nextCell))
+                {
                     path.add(nextCell);
-                    if (nextCell.i == endI && nextCell.j == endJ) {
+                    if (nextCell.i == endI && nextCell.j == endJ)
+                    {
                         found = true;
                     }
-                } else {
-                    path.remove(path.size() - 1);//borrando la ultima posicion
                 }
+            }
+            else
+            {
+                path.remove(path.size() - 1);//borrando la ultima posicion
             }
         }
         return found;
@@ -236,7 +260,7 @@ public class Labyrinth {
     }
 }
 
-    /**private char getCell(int Ie, int Je)
+    /**private char getCell(int Ienter, int Jenter)
      * {
         if
         if
