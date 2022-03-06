@@ -116,13 +116,17 @@ public class Labyrinth {
                             if(path.get(k).i == i && path.get(k).j == j)
                             {
                                 if  (path.get(k).direction == 1)
-                                {System.out.print('^');}
+                                {String up = ("^");
+                                    System.out.print(up);}
                                 else if (path.get(k).direction == 2)
-                                {System.out.print('v');}
+                                {String down = ("v");
+                                    System.out.print(down.replaceAll("\\s", ""));}
                                 else if (path.get(k).direction == 3)
-                                {System.out.print('<');}
+                                {String left = ("<");
+                                    System.out.print(left.replaceAll("\\s", ""));}
                                 else if (path.get(k).direction == 4)
-                                {System.out.print('>');}
+                                {String right = (">");
+                                    System.out.print(right.replaceAll("\\s", ""));}
                             }
                         }
                     }
@@ -161,9 +165,9 @@ public class Labyrinth {
     public void coordinateMenu() throws IOException, InterruptedException {
         System.out.println(Config.MENUFINDPATH);
         for (int i = 0; i < 3; i++) {
-            int option = Interface.getInt("Selecciona opcion: ");
+            int option = Interface.getInt("\nSelecciona opcion: \n");
             if (option < 0 || option >= 3) {
-                System.err.println("Opcion introducida no valida");
+                System.err.println("\nOpcion introducida no valida.\n");
                 continue;
             }
             if (option == 0) {
@@ -173,13 +177,21 @@ public class Labyrinth {
                     //Metodo Primer camino encontrado
                     if (startI == endI && startJ == endJ)//No se han establecido las casillas de entrada y salida
                     {
-                        System.err.print("Debe establecer las casillas de entrada y salida");
-                    } else if (findFirstPath()) {
-                        System.out.println("Primer camino encontrado");
+                        System.err.print("\nDebe establecer las casillas de entrada y salida.\n");
+                    }
+                    else if (findFirstPath()) {
+                        System.out.println("\nPrimer camino encontrado.\n");
                         showMap();
+                        System.out.println("\nCantidad de pasos.\n");
                         System.out.print(path.size());
+                        System.out.println("\n");
+
+                        System.out.println(Config.MENUFINDPATH);
+                        return;
+
                     } else {
-                        System.err.println("No se ha encontrado camino");
+                        System.err.println("\nNo se ha encontrado camino.\n");
+                        return;
                     }
                 } else {
                     //Metodo Camino mas rapido
@@ -250,6 +262,7 @@ public class Labyrinth {
         {
             return false;
         }
+
         for (int i = 0; i < path.size(); i++) {
             if (path.get(i).i == cell.i && path.get(i).j == cell.j) //comprueba si ya ha estado en esta casilla
             {
