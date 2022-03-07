@@ -182,8 +182,6 @@ public class Labyrinth {
                     else if (findFirstPath()) {
                         System.out.println("\nPrimer camino encontrado.\n");
                         showMap();
-                        System.out.println("\nCantidad de pasos.\n" + path.size());
-                        System.out.println("\n");
                         showSteps();
                         System.out.println(Config.MENUFINDPATH);
                         return;
@@ -198,10 +196,17 @@ public class Labyrinth {
             }
         }
     }
-    public String showSteps()
-    {
 
+    public void showSteps()
+    {
+        System.out.println("\nCantidad de pasos: " + path.size());
+        for (int i = 0; i < path.size(); i++)
+
+        {
+           System.out.println("(" + path.get(i).i + "," + path.get(i).j + ")");
+        }
     }
+
     private boolean findFirstPath() {
         boolean found = false;
 
