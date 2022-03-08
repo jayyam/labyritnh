@@ -88,7 +88,14 @@ public class Labyrinth {
         return files;
     }
 
-    public void showMap() throws IOException, InterruptedException {
+    public void printCell(char c)
+    {
+        System.out.print(c + " ");
+    }
+
+    public void showMap() throws IOException, InterruptedException
+    {
+        char cell = ' ';
         if (!loaded)
         {
             System.err.print("No se ha cargado el laberinto");
@@ -96,41 +103,25 @@ public class Labyrinth {
         else
         {
             for (int i = 0; i < map.length; i++)
-            {
-                for (int j = 0; j < map[i].length; j++)
+            {for (int j = 0; j < map[i].length; j++)
                 {
-                    if (startI == i && startJ == j)
-                    {
-                        System.out.print("E ");
-                        continue;
-                    }
-                    else if (endI == i && endJ == j)
-                    {
-                        System.out.print("S ");
-                        continue;
-                    }
+                    cell = map[i][j];
+                    if (startI == i && startJ == j) {cell ='E';}
+                    else if (endI == i && endJ == j) {cell ='S';}
                     else
                     {
-                        for(int k = 0; k < path.size(); k++)
+                        for(Coordinate coordinate : path)
                         {
-                            if(path.get(k).i == i && path.get(k).j == j)
+                            if(coordinate.i == i && coordinate.j == j)
                             {
-                                if  (path.get(k).direction == 1)
-                                {String up = ("^");
-                                    System.out.print(up);}
-                                else if (path.get(k).direction == 2)
-                                {String down = ("v");
-                                    System.out.print(down.replaceAll("\\s", ""));}
-                                else if (path.get(k).direction == 3)
-                                {String left = ("<");
-                                    System.out.print(left.replaceAll("\\s", ""));}
-                                else if (path.get(k).direction == 4)
-                                {String right = (">");
-                                    System.out.print(right.replaceAll("\\s", ""));}
+                                     if (coordinate.direction == 1) {cell ='^';}
+                                else if (coordinate.direction == 2) {cell ='v';}
+                                else if (coordinate.direction == 3) {cell ='<';}
+                                else if (coordinate.direction == 4) {cell ='>';}
                             }
                         }
                     }
-                    System.out.print(map[i][j] + " ");
+                    printCell(cell);
                 }
                 System.out.println();
             }
@@ -184,7 +175,6 @@ public class Labyrinth {
                         showMap();
                         showSteps();
                         System.out.println(Config.MENUFINDPATH);
-                        return;
 
                     } else {
                         System.err.println("\nNo se ha encontrado camino.\n");
@@ -201,7 +191,6 @@ public class Labyrinth {
     {
         System.out.println("\nCantidad de pasos: " + path.size());
         for (int i = 0; i < path.size(); i++)
-
         {
            System.out.println("(" + path.get(i).i + "," + path.get(i).j + ")");
         }
