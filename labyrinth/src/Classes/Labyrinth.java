@@ -192,7 +192,12 @@ public class Labyrinth {
         System.out.println("\nCantidad de pasos: " + path.size());
         for (int i = 0; i < path.size(); i++)
         {
-           System.out.println("(" + path.get(i).i + "," + path.get(i).j + ")");
+           System.out.print("(" + path.get(i).i + "," + path.get(i).j + ")");
+
+           if (path.get(i).direction==1){System.out.println(" Arriba");}
+            else if (path.get(i).direction==2){System.out.println(" Abajo");}
+            else if (path.get(i).direction==3){System.out.println(" Izquierda");}
+           else if (path.get(i).direction==4){System.out.println(" Derecha");}
         }
     }
 
