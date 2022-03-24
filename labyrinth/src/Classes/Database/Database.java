@@ -1,6 +1,6 @@
-package Classes;
+package Classes.Database;
 
-public class Database
+/**public class Database
 {
     public static login()
     {
@@ -17,4 +17,4 @@ public class Database
         if (){return true;}
         else{return false;}
     }
-}
+}*/

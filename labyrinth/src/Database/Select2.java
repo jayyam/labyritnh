@@ -1,11 +1,11 @@
-package Classes.Database;
+package Database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class Select1
+public class Select2
 {
     public static void main(String[] args)
     {
