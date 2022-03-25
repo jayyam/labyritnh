@@ -21,7 +21,7 @@ public class Select2
     {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/agenda", "root", "fran");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/agenda", "root", "1234");
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM contacto WHERE nombre LIKE '%" + nombre + "%';");
             while (rs.next()) {

@@ -15,7 +15,7 @@ public class Select1
     {
         try {
             Class.forName("com.mysql.jc.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.0:3306/agenda", "root", "alpurria22");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.0:3306/agenda", "root", "1234");
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM contacto;");
             while (rs.next()) {
