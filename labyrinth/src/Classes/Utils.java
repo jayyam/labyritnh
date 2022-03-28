@@ -7,7 +7,7 @@ public class Utils
 {
     public static boolean validateEmail()
     {
-        String email = "pepe.al@gmail.com";//texto con numeros y letras
+        String email = "pepe.al@gmail.com";
         String regex = "^[\\w-\\+]+(\\.[\\w-\\+]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";//Comprueba si contiene
         //comprobando email
 
