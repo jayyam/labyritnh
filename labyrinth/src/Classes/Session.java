@@ -132,7 +132,7 @@ public class Session
 		return found;
 	}
 
-	public void signupV1()
+	public void signupV1()//validacion checkUser aqui
 
 	{
 		String username = Interface.getString("Nombre de usuario?: ");

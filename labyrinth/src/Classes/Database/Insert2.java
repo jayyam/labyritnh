@@ -33,10 +33,10 @@ public class Insert2//modificado para agregar en db laberinto
         try
         {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/labyrinth","root","1234");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/labyrinth","root","alpurria22");
             Statement stmt =conn.createStatement();
 
-            stmt.executeUpdate("INSERT INTO labyrinth(username, name, age, DNI, email, address, birthdate, role) VALUES ('" +username+ "','" +name+ "','" +age+ "','" +DNI+ "','" +email+ "','" +address+ "','" +birthdate+ "','" +role+ "');");
+            stmt.executeUpdate("INSERT INTO users(username, name, age, DNI, email, address, birthdate, role) VALUES ('" +username+ "','" +name+ "','" +age+ "','" +DNI+ "','" +email+ "','" +address+ "','" +birthdate+ "','" +role+ "');");
             stmt.close();
             conn.close();
         }
