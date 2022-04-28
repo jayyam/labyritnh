@@ -6,7 +6,6 @@
       <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/labyrinth/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/labyrinth/src/assets" type="java-resource" />
-      <excludeFolder url="file://$MODULE_DIR$/labyrinth/src/Classes/Database" />
     </content>
     <orderEntry type="jdk" jdkName="11" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />

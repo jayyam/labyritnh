@@ -15,10 +15,10 @@ public class Insert1
         try
         {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/agenda","root","1234");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/agenda","root","alpurria22");
             Statement stmt =conn.createStatement();
 
-            stmt.executeUpdate("INSERT INTO contacto(nombre,email,telefono) VALUES ('Federico','federico@gmail.com', '34602968574');");
+            stmt.executeUpdate("INSERT INTO contacto(nombre,email,telefono) VALUES ('juan','juan@gmail.com', '34696468574');");
             stmt.close();
             conn.close();
         }
