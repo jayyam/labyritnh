@@ -1,6 +1,5 @@
 omarsantana#654321#Omar Garcia Santana#96#DNI#taomsa@.com#Calle Orel,1#22/11/1900#user
 dave#654321#Dave M Sanchez#31#87654321A#davems@gmail.com#Calle Falsa, 123#12/11/1955#user
-
 santana#123456#holacaracola#97#46582147x#satantras@hotmal.com#c/cierva #3 murcia#11/10/2003#user
 santanaomar#123456#alfonso garcia#83#49651255#alfanfufe@gmail.com#c/alli numero este#13/15/2025#user
 omar#321#omarA#65#5363456#ofmndosf@hy.vo#coled#45/85#user
