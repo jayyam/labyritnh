@@ -7,6 +7,7 @@
 
 package Classes;
 
+import javax.naming.Name;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -47,6 +48,7 @@ public class Session
 		String username = Interface.getString("Introduce Usuario: ");
 		String password = Interface.getString("Introduzca contraseña: ");
 
+
 		ArrayList<String> users = readUserFile();
 		//System.out.println("A");//test
 		for (int i = 0; i < users.size(); i++) {
@@ -86,16 +88,15 @@ public class Session
 	}
 
 	public void ShowUser()// Devuelve los datos de usuario
-
 	{
 		System.out.println("Usuario: " + user.username);
 		System.out.println("Nombre de usuario: " + user.name);
-		System.out.println("Edad: " + user.age);
-		System.out.println("NIF: " + user.DNI);
 		System.out.println("Correo electronico: " + user.email);
-		System.out.println("Direccion: " + user.address);
+		System.out.println("NIF: " + user.DNI);
+		System.out.println("Edad: " + user.age);
 		System.out.println("Fecha de nacimiento: " + user.birthdate);
-		System.out.println("Nombre de usuario: " + user.role);
+		System.out.println("Direccion: " + user.address);
+		System.out.println("Rol de usuario: " + user.role);
 
 		Interface.toContinue();
 	}
@@ -132,35 +133,36 @@ public class Session
 		return found;
 	}
 
-	public void signupV1()//validacion checkUser aqui
-
+	public void signupV1()
 	{
-		String username = Interface.getString("Nombre de usuario?: ");
-		if (checkUser(username)) 
+		String username = Interface.getString("Nombre de usuario ?: ");
+		if ((checkUser(username)) || (Utils.validateUsername(username) == true))
 		{
-			System.out.println("\nEl usuario "+username+" ya existe!");
+			System.out.println("\nEl usuario "+username+" ya existe o el formato no es valido");
 			return;
 		}
-
-		/**ArrayList<String> users = readUsersFile(); // PASO 2
-		for (int i = 0; i < users.size(); i++) { // PASO 3
-			String[] currentUser = users.get(i).split("#");
-			if (username.equalsIgnoreCase(currentUser[0])) {
-				System.out.print("\nEl usuario ya existe\n");
-				return;
-			}*/
-		// paso4
 		String password = Interface.getString("Contraseña?: ");
+		if(Utils.validatePassword(password) == true) {return;}
 		String name = Interface.getString("Nombre completo?: ");
-		String age = Interface.getString("Edad?: ");
-		String DNI = Interface.getString("DNI/NIF?: ");
+		if (Utils.validateName(name) == true){return;};
 		String email = Interface.getString("Email?: ");
-		String address = Interface.getString("Direccion?: ");
+		if (Utils.validateEmail(email)){return;};
+		String DNI = Interface.getString("DNI?: ");
+		if (Utils.validateDNI(DNI)){return;};
+		String age = Interface.getString("Edad?: ");
 		String birthdate = Interface.getString("Fecha de nacimiento?: ");
-
+		String address = Interface.getString("Direccion?: ");
+		String role = Interface.getString("Rol?: ");
 		// paso5
-		String newUser = "\n" + username + "#" + password + "#" + name + "#" + age + "#" + DNI + "#" + email + "#"
-				+ address + "#" + birthdate + "#user";
+		String newUser =   "\n" + username +
+							"#" + password +
+							"#" + name +
+							"#" + email +
+							"#" + DNI +
+							"#" + age +
+							"#" + birthdate +
+							"#" + address+
+							"#" + role;
 
 		// Paso 6
 		boolean result = writeUser(newUser);
@@ -211,11 +213,18 @@ public class Session
 	private void setUser(String[] currentUser) {
 		user.username = currentUser[0];
 		user.name = currentUser[2];
-		user.age = currentUser[3];
+		user.email = currentUser[3];
 		user.DNI = currentUser[4];
-		user.email = currentUser[5];
-		user.address = currentUser[6];
-		user.birthdate = currentUser[7];
+		user.age = currentUser[5];
+		user.birthdate = currentUser[6];
+		user.address = currentUser[7];
 		user.role = currentUser[8];
 	}
 }
+/**ArrayList<String> users = readUsersFile(); // PASO 2
+ for (int i = 0; i < users.size(); i++) { // PASO 3
+ String[] currentUser = users.get(i).split("#");
+ if (username.equalsIgnoreCase(currentUser[0])) {
+ System.out.print("\nEl usuario ya existe\n");
+ return;
+ }*/

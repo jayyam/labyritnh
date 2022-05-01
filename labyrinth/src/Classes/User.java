@@ -12,11 +12,11 @@ public class User
 {
 	public String username;
 	public String name;
-	public String age;
-	public String DNI;
 	public String email;
-	public String address;
+	public String DNI;
+	public String age;
 	public String birthdate;
+	public String address;
 	public String role;
 }
 
