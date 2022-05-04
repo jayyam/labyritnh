@@ -55,7 +55,7 @@ public class Config
 													+ "7- Cerrar sesion\n"
 													+ "0- Salir\n";
 
-		public static final String[] FIELDS = new String[]{"Nombre de usuario?: ", "Contraseña?: ", "Nombre completo?: ", "Edad?: ", "DNI/NIF?: ", "Email?: ", "Direccion?: ", "Fecha de nacimiento?: "};
+		public static final String[] FIELDS = new String[]{"Nombre de usuario?: ", "Contraseña?: ", "Nombre completo?: ", "Email?: ","DNI/NIF?: ",  "Direccion?: ", "Fecha de nacimiento?: " ,"Rol?: "};
 
 /**
  currentUser.username = "omarsantana";
