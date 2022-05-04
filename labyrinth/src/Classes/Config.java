@@ -17,6 +17,9 @@ public class Config
 		public static final String FILEPATH = "/home/omarsantana/IdeaProjects/labyritnh/labyrinth/src/assets/files/";
 		public static final String USERSFILE = "users.txt";
 
+	public static final String LOGPATH = "/home/omarsantana/IdeaProjects/labyritnh/labyrinth/src/assets/files/";
+	public static final String LOGFILE = "syslog.txt";
+
 		public static final String LABIRYNTHPATH = "/home/omarsantana/IdeaProjects/labyritnh/labyrinth/src/assets/files/labirynth/";
 
 		public static final String MENUFINDPATH = "Selecciona un camino\n" +
@@ -44,7 +47,7 @@ public class Config
 												+ "6- Cerrar sesion\n"
 												+ "0- Salir\n";
 
-		public static final String LOGGEDADMINMENU   = "\nOPCIONES DE PROGRAMA\n\n"
+		public static final String LOGGEDADMINMENU  = "\nOPCIONES DE PROGRAMA\n\n"
 													+ "-------------------\n"
 													+ "1- Cargar Laberinto\n"
 													+ "2- Ver laberinto\n"

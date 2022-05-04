@@ -21,7 +21,7 @@ public class Session
 	private boolean logged;
 	public Session() {logged = false;}// Constructor Session
 	public boolean isLogged() {return logged;} // Devuelve el estado actual de la sesion
-	public void Login() {
+	public void Login() {//REFACTOR EN CLASE DATABASE
 		String username = Interface.getString("Introduce Usuario: ");
 		String password = Interface.getString("Introduzca contraseña: ");
 		ArrayList<String> users = readUserFile();
@@ -43,7 +43,7 @@ public class Session
 			System.err.println(username + "\nUsuario o Contraseña incorrecto!");
 		}
 	}
-	private boolean checkUser(String username) {
+	private boolean checkUser(String username) {//REFACTOR EN CLASE DATABASE
 		boolean found = false;
 		ArrayList<String> users = readUserFile(); // Paso 2
 
@@ -59,7 +59,7 @@ public class Session
 		return found;
 	}
 
-	public void signupV1()
+	public void signupV1()//REFACTOR EN CLASE DATABASE
 	{
 		String username = Interface.getString("Nombre de usuario ?: ");
 		if ((checkUser(username)) || (Utils.validateUsername(username) == true))
@@ -130,7 +130,7 @@ public class Session
 		user = new User();
 	}
 
-	private boolean writeUser(String newUser) {
+	private boolean writeUser(String newUser) {//REFACTOR EN CLASE LOG
 		boolean success = false;
 		try {
 			FileWriter myWriter = new FileWriter(Config.FILEPATH + Config.USERSFILE, true);

@@ -1,9 +1,6 @@
 package Classes;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.Statement;
-import java.sql.ResultSet;
+import java.sql.*;
 
 public class Database
 {
@@ -11,16 +8,19 @@ public class Database
     static final String USER = "root";
     static final String PASSWD = "alpurria22";
     static final String QUERYCREATE = "INSERT INTO users(username,password,name,email,DNI,address,birthdate,role) VALUES ('omar','Contraseña%2','usuario user','nanoshays22@gmail.com','48055673X','c/Fco de orellana #1 1-H','1983-10-22','user')";
-    static final String QUERYRETRIEVE ="SELECT * FROM users WHERE id = 3";
-    static final String QUERYUPDATE ="";
-    static final String QUERYDELETE ="";
-    public static void main(String[] args)
+    static final String QUERYRETRIEVE = "SELECT * FROM users WHERE id = 1";
+    static final String QUERYUPDATE = "";
+    static final String QUERYDELETE = "";
+    public static void main(String[] args)//Pruebas. Borrar
     {
         //spearCREATE();
-        spearRETRIEVE();
+        //spearRETRIEVE();
     }
     /**public static boolean login(User user)
-     {return User;}
+     {
+        if (existe){return User;}
+        return null;
+     }
      public static boolean checkUser()
      {
         if (//existe)
@@ -45,9 +45,6 @@ public class Database
             Connection conn = DriverManager.getConnection(DB_URL, USER, PASSWD);
             Statement stmt = conn.createStatement();
             stmt.executeUpdate(QUERYCREATE);
-            /**while (rs.next()) {
-                System.out.println("Users " + rs.getInt("id") + ": " + rs.getString("telefono"));
-            }*/
             stmt.close();
             conn.close();
         }
