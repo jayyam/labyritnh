@@ -14,9 +14,8 @@ public class User
 	public String name;
 	public String email;
 	public String DNI;
-	public String age;
-	public String birthdate;
 	public String address;
+	public String birthdate;
 	public String role;
 }
 

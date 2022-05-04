@@ -1,7 +1,14 @@
 package Classes;
 
+import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.Date;
+
 public class Utils
 {
+    private static String[] dateFormats = {"yyyy-MM-dd", "dd/MM/yyyy"};
     public static boolean validateUsername(String username)
     {
         String regexUsername = "^[A-ZÑa-zñ][áéíóúña-z ]+";
@@ -20,15 +27,21 @@ public class Utils
              System.out.println("FORMATO NO VALIDO");
              return true;
          }
-         else{
-            //this.password = encryptMD5(password);
-            // return text.matches(Regex.Password);
-             }
+             //this.password = encryptMD5(password);
+             // return text.matches(Regex.Password);
         return false;
     }
-    public static void encryptMD5()
+    public static void encryptMD5(String password)
     {
         //Método estático público el cual recibirá una contraseña y la devolverá encriptada en MD5.
+        try
+        {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            md.update(password.getBytes(), 0, password.length());
+            //Encriptado a guardar
+            System.out.println(new BigInteger(1, md.digest()).toString(16));
+        }
+        catch (NoSuchAlgorithmException e) {e.printStackTrace();}
     }
     public static boolean validateName(String name)
     {
@@ -69,45 +82,34 @@ public class Utils
         // en función si la fecha tiene el formato adecuado y también es válida.
         return false;
     }
-    public static void formatDateEU()
+    public static Date formatDateSQL()
+    {   //Método estático público el cual recibirá una fecha en formato europeo (dd/mm/aaaa)
+        // y la devolverá en formato Date de SQL (aaaa-mm-dd).
+        return null;
+    }
+    public static Date formatDateEU()
     {   //Método estático público el cual recibirá una fecha en formato
         // Date de SQL (aaaa-mm-dd) y la devolverá en formato europeo (dd/mm/aaaa).
         /**
-         * private static String[] date_formats =
-         * {
-         *         "yyyy-MM-dd",
-         *         "yyyy/MM/dd",
-         *         "dd/MM/yyyy",
-         *         "dd-MM-yyyy",
-         *         "yyyy MMM dd",
-         *         "yyyy dd MMM",
-         *         "dd MMM yyyy",
-         *         "dd MMM yyyy"
-         };
-
-          A brute-force workaround for Java's failure to accept "any arbitrary date format"
-
-         public static Date tryDifferentFormats (String sDate){
-         Date myDate = null;
-         for (String formatString : date_formats) {
-         try {
-         SimpleDateFormat format = new SimpleDateFormat(formatString);
-         format.setLenient(false);
-         myDate = format.parse(sDate);
-         break;
-         }
-               catch(ParseException e){
-                   // System.out.println("  fmt: " + formatString + ": FAIL");
-         }
-         }
+         public static Date tryDifferentFormats (String sDate)
+         {
+            Date myDate = null;
+            for (String formatString : dateFormats)
+            {
+            try {
+                SimpleDateFormat format = new SimpleDateFormat(formatString);
+                format.setLenient(false);
+                myDate = format.parse(sDate);
+                break;
+                }
+            catch(ParseException e)
+                {
+                   System.out.println("  fmt: " + formatString + ": FAIL");
+                }
+            }
          return myDate;
          }
           */
+        return null;
     }
-    public static void formatDateSQL()
-    {   //Método estático público el cual recibirá una fecha en formato europeo (dd/mm/aaaa)
-        // y la devolverá en formato Date de SQL (aaaa-mm-dd).
-    }
-
-
 }

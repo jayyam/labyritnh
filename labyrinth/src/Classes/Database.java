@@ -1,16 +1,31 @@
-package Database;
+package Classes;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class Select2
+public class Database
 {
-    public static void main(String[] args)
-    {
-        lanzarConsulta();
-    }
+    public static void main(String[] args) {lanzarConsulta();}
+    /**public static boolean login(User user)
+     {return User;}
+     public static boolean checkUser()
+     {
+        if (//existe)
+            {
+                return true
+            }
+        return false;
+     }
+     public static boolean signup()
+     {
+        if (//existe)
+        {
+            return true;
+        }
+        return false;
+     }
+     */
     public static void lanzarConsulta()
     {
         try {

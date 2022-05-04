@@ -11,7 +11,7 @@ public class Config
 
 {		public static final int MILISECONDS = 2000;
 		
-		public static final String VERSION =  "v1.0.0";
+		public static final String VERSION =  "v1.1.0";
 
 		public static final String FILEABSOLUTEPATH = "./assets/files";
 		public static final String FILEPATH = "/home/omarsantana/IdeaProjects/labyritnh/labyrinth/src/assets/files/";
@@ -43,6 +43,17 @@ public class Config
 												+ "5- Ver usuario actual\n"
 												+ "6- Cerrar sesion\n"
 												+ "0- Salir\n";
+
+		public static final String LOGGEDADMINMENU   = "\nOPCIONES DE PROGRAMA\n\n"
+													+ "-------------------\n"
+													+ "1- Cargar Laberinto\n"
+													+ "2- Ver laberinto\n"
+													+ "3- Establecer casilla de entrada y salida\n"
+													+ "4- Buscar caminos\n"
+													+ "5- Ver usuario actual\n"
+													+ "6- "
+													+ "7- Cerrar sesion\n"
+													+ "0- Salir\n";
 
 		public static final String[] FIELDS = new String[]{"Nombre de usuario?: ", "Contraseña?: ", "Nombre completo?: ", "Edad?: ", "DNI/NIF?: ", "Email?: ", "Direccion?: ", "Fecha de nacimiento?: "};
 
