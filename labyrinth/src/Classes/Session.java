@@ -19,12 +19,20 @@ public class Session
 {
 	private User user = new User();// declarando e inicializando el objeto
 	private boolean logged;
-	public Session() {logged = false;}// Constructor Session
-	public boolean isLogged() {return logged;} // Devuelve el estado actual de la sesion
+
+	public Session()//Constructor Session
+		{
+			logged = false;
+		}
+	public boolean isLogged()//Devuelve el estado actual de la sesion
+		{
+			return logged;
+		}
+
 	public void Login() {//REFACTOR EN CLASE DATABASE
-		String username = Interface.getString("Introduce Usuario: ");
-		String password = Interface.getString("Introduzca contraseña: ");
-		ArrayList<String> users = readUserFile();
+	 String username = Interface.getString("Introduce Usuario: ");
+	 String password = Interface.getString("Introduzca contraseña: ");
+		/**ArrayList<String> users = readUserFile();
 		//System.out.println("A");//test
 		for (int i = 0; i < users.size(); i++) {
 			String[] currentUser = users.get(i).split("#");
@@ -36,7 +44,7 @@ public class Session
 				System.out.println(username + "\nHa iniciado sesion con exito!");
 				break;
 			}
-		}
+		}*/
 		//System.out.println("D");//test
 		if (!logged) {
 			//System.out.println("Z");//test
@@ -117,7 +125,7 @@ public class Session
 		System.out.println("Usuario: " + user.username);
 		System.out.println("Nombre de usuario: " + user.name);
 		System.out.println("Correo electronico: " + user.email);
-		System.out.println("NIF: " + user.DNI);
+		System.out.println("NIF: " + user.nif);
 		System.out.println("Direccion: " + user.address);
 		System.out.println("Fecha de nacimiento: " + user.birthdate);
 		System.out.println("Rol de usuario: " + user.role);
@@ -147,7 +155,7 @@ public class Session
 		user.username = currentUser[0];
 		user.name = currentUser[2];
 		user.email = currentUser[3];
-		user.DNI = currentUser[4];
+		user.nif = currentUser[4];
 		user.address = currentUser[5];
 		user.birthdate = currentUser[6];
 		user.role = currentUser[7];

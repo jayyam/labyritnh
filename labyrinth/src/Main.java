@@ -6,6 +6,9 @@
  */
 
 import Classes.Config;
+import Classes.Database;
+import Classes.Interface;
+import Classes.Utils;
 
 import java.io.IOException;
 
@@ -43,14 +46,14 @@ public class Main
 
 		{
 			case 1: {
-				Session.Login();
-				Thread.sleep(Classes.Config.MILISECONDS);
+				Database.Login(username, Utils.encryptMD5(password));
+				Thread.sleep(Config.MILISECONDS);
 				break;
 			}
 
 			case 2: {
-				Session.signupV1();
-				Thread.sleep(Classes.Config.MILISECONDS);
+				Session.SignupV1();
+				Thread.sleep(Config.MILISECONDS);
 				break;
 			}
 

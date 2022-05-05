@@ -4,13 +4,15 @@ import java.sql.*;
 
 public class Database
 {
+
     static final String DB_URL= "jdbc:mysql://127.0.0.1:3306/labyrinth";
     static final String USER = "root";
     static final String PASSWD = "alpurria22";
-    static final String QUERYCREATE = "INSERT INTO users(username,password,name,email,DNI,address,birthdate,role) VALUES ('omar','Contraseña%2','usuario user','nanoshays22@gmail.com','48055673X','c/Fco de orellana #1 1-H','1983-10-22','user')";
-    static final String QUERYRETRIEVE = "SELECT * FROM users WHERE id = 1";
+    static final String QUERYCREATE = "INSERT INTO users(username,password,name,email,DNI,address,birthdate,role) VALUES ('<username>','<password>','<name>','<email>','<DNI>','<address>','<birthday>','<role>')";
+    static final String QUERYRETRIEVE ="";
     static final String QUERYUPDATE = "";
     static final String QUERYDELETE = "";
+    static final String QUERYLogin = "SELECT * FROM users WHERE username='<username>' AND password='<password>';";
     public static void main(String[] args)//Pruebas. Borrar
     {
         //spearCREATE();
@@ -21,7 +23,7 @@ public class Database
         if (existe){return User;}
         return null;
      }
-     public static boolean checkUser()
+     public static boolean checkUser()word
      {
         if (//existe)
             {
@@ -38,40 +40,54 @@ public class Database
         return false;
      }
      */
-    public static void spearCREATE()
+    public static Boolean Signup(String username, String password, String name, String email, String DNI, String address, String birthdate, String role)
     {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn = DriverManager.getConnection(DB_URL, USER, PASSWD);
             Statement stmt = conn.createStatement();
-            stmt.executeUpdate(QUERYCREATE);
+            String query = QUERYCREATE.replaceAll("<name>",username)
+                                      .replaceAll("<password>",password)
+                                      .replaceAll("<name>",name)
+                                      .replaceAll("<email>",email)
+                                      .replaceAll("<DNI>",DNI)
+                                      .replaceAll("<address>",address)
+                                      .replaceAll("<birthdate>",birthdate)
+                                      .replaceAll("<role>",role);
+            stmt.executeUpdate(query);
             stmt.close();
             conn.close();
         }
         catch (Exception e)
         {
             System.err.println("ERROR" + e);
+            return false;
         }
+        return true;
     }
-    public static void spearRETRIEVE()
+    public static User Login(String username, String password)
     {
+        User user = new User();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn = DriverManager.getConnection(DB_URL, USER, PASSWD);
             Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery(QUERYRETRIEVE);
-            while (rs.next()) {
-                System.out.println(
-                                 rs.getInt("id")
-                          +"\n"+ rs.getString("username")
-                          +"\n"+ rs.getString("password")
-                          +"\n"+ rs.getString("name")
-                          +"\n"+ rs.getString("email")
-                          +"\n"+ rs.getString("DNI")
-                          +"\n"+ rs.getString("address")
-                          +"\n"+ rs.getString("birthdate")
-                          +"\n"+ rs.getString("role")
-                );
+            String query = QUERYLogin.replaceAll("<username>",username)
+                                     .replaceAll("<password>",password);
+            ResultSet rs = stmt.executeQuery(query);
+            while (rs.next())
+            {
+
+                          user.id = rs.getInt("id");
+                          user.username = rs.getString("username");
+                          user.name = rs.getString("name");
+                          user.email = rs.getString("email");
+                          user.nif = rs.getString("DNI");
+                          user.address = rs.getString("address");
+                          user.birthdate = rs.getString("birthdate");
+                          user.role= rs.getString("role");
+
+
             }
             rs.close();
             stmt.close();
@@ -80,6 +96,8 @@ public class Database
         catch (Exception e)
         {
             System.err.println("ERROR" + e);
+            return null;
         }
+        return user;
     }
 }

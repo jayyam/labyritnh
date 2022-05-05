@@ -31,7 +31,7 @@ public class Utils
              // return text.matches(Regex.Password);
         return false;
     }
-    public static void encryptMD5(String password)
+    public static String encryptMD5(String password)
     {
         //Método estático público el cual recibirá una contraseña y la devolverá encriptada en MD5.
         try
@@ -39,9 +39,10 @@ public class Utils
             MessageDigest md = MessageDigest.getInstance("MD5");
             md.update(password.getBytes(), 0, password.length());
             //Encriptado a guardar
-            System.out.println(new BigInteger(1, md.digest()).toString(16));
+            return new BigInteger(1, md.digest()).toString(16);
         }
         catch (NoSuchAlgorithmException e) {e.printStackTrace();}
+        return "";
     }
     public static boolean validateName(String name)
     {
