@@ -22,7 +22,7 @@ public class Session
 
 	public Session()//Constructor Session
 		{
-			logged = false;
+			logged = true;
 		}
 	public boolean isLogged()//Devuelve el estado actual de la sesion
 		{
@@ -81,27 +81,21 @@ public class Session
 		if (Utils.validateName(name) == true){return;}
 		String email = Interface.getString("Email?: ");
 		if (Utils.validateEmail(email) == true){return;}
-		String DNI = Interface.getString("DNI?: ");
-		if (Utils.validateDNI(DNI) == true){return;}
+		String nif = Interface.getString("DNI?: ");
+		if (Utils.validateNif(nif) == true){return;}
 		String address = Interface.getString("Direccion?: ");
 		String birthdate = Interface.getString("Fecha de nacimiento?: ");
 		String role = Interface.getString("Rol?: ");
 
-		// GUARDANDO LOS DATOS EN EL TXT
-		String newUser ="\n" + username +
-				"#" + password +
-				"#" + name +
-				"#" + email +
-				"#" + DNI +
-				"#" + address+
-				"#" + birthdate +
-				"#" + role;
-		boolean result = writeUser(newUser);
-		if (result) {
-			System.out.println("Usuario registrado correctamente!");
-		} else {
-			System.err.println("error occurred.");
-		}
+	}
+	private void setUser(String[] currentUser) {
+		user.username = currentUser[0];
+		user.name = currentUser[2];
+		user.email = currentUser[3];
+		user.nif = currentUser[4];
+		user.address = currentUser[5];
+		user.birthdate = currentUser[6];
+		user.role = currentUser[7];
 	}
 	// Devuelve un Array con todos los usuarios
 	private ArrayList<String> readUserFile() {
@@ -150,15 +144,6 @@ public class Session
 			e.printStackTrace();
 		}
 		return success;
-	}
-	private void setUser(String[] currentUser) {
-		user.username = currentUser[0];
-		user.name = currentUser[2];
-		user.email = currentUser[3];
-		user.nif = currentUser[4];
-		user.address = currentUser[5];
-		user.birthdate = currentUser[6];
-		user.role = currentUser[7];
 	}
 }
 /**ArrayList<String> users = readUsersFile(); // PASO 2

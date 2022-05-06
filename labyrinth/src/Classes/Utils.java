@@ -64,10 +64,10 @@ public class Utils
         }
         return false;
     }
-    public static boolean validateDNI(String DNI)
+    public static boolean validateNif(String nif)
     {
-        String regexDNI = "^[0-9]{8}[TRWAGMYFPDXBNJZSQVHLCKE]";
-        if(!DNI.matches(regexDNI))
+        String regexNif = "^[0-9]{8}[TRWAGMYFPDXBNJZSQVHLCKE]";
+        if(!nif.matches(regexNif))
         {
             System.out.println("FORMATO VALIDO");
             return true;

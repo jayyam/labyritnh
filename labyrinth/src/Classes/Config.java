@@ -17,8 +17,8 @@ public class Config
 		public static final String FILEPATH = "/home/omarsantana/IdeaProjects/labyritnh/labyrinth/src/assets/files/";
 		public static final String USERSFILE = "users.txt";
 
-	public static final String LOGPATH = "/home/omarsantana/IdeaProjects/labyritnh/labyrinth/src/assets/files/";
-	public static final String LOGFILE = "syslog.txt";
+		public static final String LOGPATH = "/home/omarsantana/IdeaProjects/labyritnh/labyrinth/src/assets/files/";
+		public static final String LOGFILE = "syslog.txt";
 
 		public static final String LABIRYNTHPATH = "/home/omarsantana/IdeaProjects/labyritnh/labyrinth/src/assets/files/labirynth/";
 

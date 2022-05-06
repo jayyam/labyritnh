@@ -5,14 +5,14 @@ import java.sql.*;
 public class Database
 {
 
-    static final String DB_URL= "jdbc:mysql://127.0.0.1:3306/labyrinth";
+    static final String DB_URL = "jdbc:mysql://127.0.0.1:3306/labyrinth";
     static final String USER = "root";
     static final String PASSWD = "alpurria22";
-    static final String QUERYCREATE = "INSERT INTO users(username,password,name,email,DNI,address,birthdate,role) VALUES ('<username>','<password>','<name>','<email>','<DNI>','<address>','<birthday>','<role>')";
+    static final String QUERYCREATE = "INSERT INTO users(username,password,name,email,nif,address,birthdate,role) VALUES ('<username>','<password>','<name>','<email>','<nif>','<address>','<birthday>','<role>')";
     static final String QUERYRETRIEVE ="";
     static final String QUERYUPDATE = "";
     static final String QUERYDELETE = "";
-    static final String QUERYLogin = "SELECT * FROM users WHERE username='<username>' AND password='<password>';";
+    static final String QUERYLogin = "SELECT * FROM users WHERE username='<username>'AND password='<password>';";
     public static void main(String[] args)//Pruebas. Borrar
     {
         //spearCREATE();
@@ -40,7 +40,7 @@ public class Database
         return false;
      }
      */
-    public static Boolean Signup(String username, String password, String name, String email, String DNI, String address, String birthdate, String role)
+    public static Boolean Signup(String username, String password, String name, String email, String nif, String address, String birthdate, String role)
     {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -50,7 +50,7 @@ public class Database
                                       .replaceAll("<password>",password)
                                       .replaceAll("<name>",name)
                                       .replaceAll("<email>",email)
-                                      .replaceAll("<DNI>",DNI)
+                                      .replaceAll("<nif>",nif)
                                       .replaceAll("<address>",address)
                                       .replaceAll("<birthdate>",birthdate)
                                       .replaceAll("<role>",role);
@@ -77,17 +77,14 @@ public class Database
             ResultSet rs = stmt.executeQuery(query);
             while (rs.next())
             {
-
-                          user.id = rs.getInt("id");
-                          user.username = rs.getString("username");
-                          user.name = rs.getString("name");
-                          user.email = rs.getString("email");
-                          user.nif = rs.getString("DNI");
-                          user.address = rs.getString("address");
-                          user.birthdate = rs.getString("birthdate");
-                          user.role= rs.getString("role");
-
-
+                user.id = rs.getInt("id");
+                user.username = rs.getString("username");
+                user.name = rs.getString("name");
+                user.email = rs.getString("email");
+                user.nif = rs.getString("nif");
+                user.address = rs.getString("address");
+                user.birthdate = rs.getString("birthdate");
+                user.role = rs.getString("role");
             }
             rs.close();
             stmt.close();

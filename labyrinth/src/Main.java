@@ -52,7 +52,7 @@ public class Main
 			}
 
 			case 2: {
-				Session.SignupV1();
+				//Database.Signup();
 				Thread.sleep(Config.MILISECONDS);
 				break;
 			}
