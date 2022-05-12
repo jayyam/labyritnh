@@ -4,6 +4,8 @@ import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Utils
@@ -77,15 +79,59 @@ public class Utils
     public static void getAge()
     {//Método estático público el cual recibirá
         // una fecha de nacimiento y devolverá la edad en función de dicha fecha.
+        /**
+
+         * static int getAge(String date1) {
+         *         String formatD[] = date1.split("/");
+         *         int year = Integer.parseInt(formatD[2]);
+         *         int week = Integer.parseInt(formatD[1]);
+         *         int day = Integer.parseInt(formatD[0]);
+         *         LocalDate dateToday = LocalDate.now();
+         *         LocalDate dateBirth = LocalDate.of(year, week, day);
+         *
+         *         Period p = Period.between(dateBirth, dateToday);
+         *
+         *         return p.getYears();
+         *
+         *     }
+         * */
     }
-    public static boolean validateDate()
+    public static boolean validateDate(String birthdate)
     {   //Método estático público el cual recibirá una fecha y devolverá un valor booleano
         // en función si la fecha tiene el formato adecuado y también es válida.
-        return false;
+
+       //public static boolean validateDate(String birthdate) {
+
+        try {
+
+            SimpleDateFormat formatDate = new SimpleDateFormat("dd/MM/yyyy");
+
+            formatDate.setLenient(false);
+
+            formatDate.parse(birthdate);
+
+        }
+        catch (ParseException e)
+        {
+
+            return false;
+
+        }
+
+        return true;
+
     }
+
     public static Date formatDateSQL()
     {   //Método estático público el cual recibirá una fecha en formato europeo (dd/mm/aaaa)
         // y la devolverá en formato Date de SQL (aaaa-mm-dd).
+        /**
+         * public static String formatDateSQL(String date3)
+         * {
+         *
+         *
+         *     }
+         * */
         return null;
     }
     public static Date formatDateEU()
@@ -110,7 +156,13 @@ public class Utils
             }
          return myDate;
          }
-          */
+--------------------------------------------------------------------------------------
+         public static String formatDateEU(String date2) {
+         String dateFormer[] = date2.split("-");
+         return dateFormer[2] + "/" + dateFormer[1] + "/" + dateFormer[0];
+         }
+
+         */
         return null;
     }
 }

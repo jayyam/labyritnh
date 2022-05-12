@@ -46,13 +46,13 @@ public class Main
 
 		{
 			case 1: {
-				Database.Login(username, Utils.encryptMD5(password));
+				//Database.Login(username, Utils.encryptMD5(password));
 				Thread.sleep(Config.MILISECONDS);
 				break;
 			}
 
 			case 2: {
-				//Database.Signup();
+				Session.signupV1();
 				Thread.sleep(Config.MILISECONDS);
 				break;
 			}

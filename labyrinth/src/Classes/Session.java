@@ -70,7 +70,7 @@ public class Session
 	public void signupV1()//REFACTOR EN CLASE DATABASE
 	{
 		String username = Interface.getString("Nombre de usuario ?: ");
-		if ((checkUser(username)) || (Utils.validateUsername(username) == true))
+		if (Utils.validateUsername(username) == true) //|| ((checkUser(username)))
 		{
 			System.err.println("\nEl usuario "+username+" ya existe o el formato no es valido");
 			return;
@@ -79,14 +79,22 @@ public class Session
 		if(Utils.validatePassword(password) == true) {return;}
 		String name = Interface.getString("Nombre completo?: ");
 		if (Utils.validateName(name) == true){return;}
-		String email = Interface.getString("Email?: ");
-		if (Utils.validateEmail(email) == true){return;}
 		String nif = Interface.getString("DNI?: ");
 		if (Utils.validateNif(nif) == true){return;}
+		String email = Interface.getString("Email?: ");
+		if (Utils.validateEmail(email) == true){return;}
 		String address = Interface.getString("Direccion?: ");
 		String birthdate = Interface.getString("Fecha de nacimiento?: ");
 		String role = Interface.getString("Rol?: ");
 
+		if (Database.Signup(username,password,name,nif,email,address,birthdate,role))
+		{
+			System.out.println("Registrado correctamente");
+		}
+		else
+		{
+			System.out.println("No se ha registrado");
+		}
 	}
 	private void setUser(String[] currentUser) {
 		user.username = currentUser[0];
@@ -118,8 +126,8 @@ public class Session
 	{
 		System.out.println("Usuario: " + user.username);
 		System.out.println("Nombre de usuario: " + user.name);
-		System.out.println("Correo electronico: " + user.email);
 		System.out.println("NIF: " + user.nif);
+		System.out.println("Correo electronico: " + user.email);
 		System.out.println("Direccion: " + user.address);
 		System.out.println("Fecha de nacimiento: " + user.birthdate);
 		System.out.println("Rol de usuario: " + user.role);
