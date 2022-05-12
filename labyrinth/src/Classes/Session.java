@@ -29,9 +29,11 @@ public class Session
 			return logged;
 		}
 
-	public void Login() {//REFACTOR EN CLASE DATABASE
+	public void LoginV1() {//REFACTOR EN CLASE DATABASE
 	 String username = Interface.getString("Introduce Usuario: ");
 	 String password = Interface.getString("Introduzca contraseña: ");
+	 User user = Database.Login(username, password);
+
 		/**ArrayList<String> users = readUserFile();
 		//System.out.println("A");//test
 		for (int i = 0; i < users.size(); i++) {
@@ -53,7 +55,7 @@ public class Session
 	}
 	private boolean checkUser(String username) {//REFACTOR EN CLASE DATABASE
 		boolean found = false;
-		ArrayList<String> users = readUserFile(); // Paso 2
+		/**ArrayList<String> users = readUserFile(); // Paso 2
 
 		for (int i = 0; i < users.size(); i++) // Paso 3
 		{
@@ -63,7 +65,7 @@ public class Session
 				found = true;
 				break;
 			}
-		}
+		}*/
 		return found;
 	}
 

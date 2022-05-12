@@ -46,7 +46,7 @@ public class Main
 
 		{
 			case 1: {
-				//Database.Login(username, Utils.encryptMD5(password));
+				Session.LoginV1();
 				Thread.sleep(Config.MILISECONDS);
 				break;
 			}
