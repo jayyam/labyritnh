@@ -142,14 +142,19 @@ public class Session
 		user = new User();
 	}
 
-	private boolean writeUser(String newUser) {//REFACTOR EN CLASE LOG
+	private boolean writeUser(String newUser)
+	{
 		boolean success = false;
-		try {
-			FileWriter myWriter = new FileWriter(Config.FILEPATH + Config.USERSFILE, true);
+		try
+		{
+			FileWriter myWriter = new FileWriter(Config.FILEPATH
+										+ Config.USERSFILE, true);
 			myWriter.write(newUser);
 			myWriter.close();
 			success = true;
-		} catch (IOException e) {
+		}
+		catch (IOException e)
+		{
 			System.out.println("Ha ocurrido un error.");
 			e.printStackTrace();
 		}

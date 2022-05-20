@@ -9,7 +9,6 @@ public class Database
     static final String USER = "root";
     static final String PASSWD = "alpurria22";
     static final String QUERYCREATE = "INSERT INTO users(username,password,name,email,nif,address,birthdate,role) VALUES ('<username>','<password>','<name>','<email>','<nif>','<address>','<birthdate>','<role>')";
-    static final String QUERYRETRIEVE ="";
     static final String QUERYUPDATE = "";
     static final String QUERYDELETE = "";
     static final String QUERYLogin = "SELECT * FROM users WHERE username='<username>'AND password='<password>';";
