@@ -54,7 +54,7 @@ public class Config
 													+ "3- Establecer casilla de entrada y salida\n"
 													+ "4- Buscar caminos\n"
 													+ "5- Ver usuario actual\n"
-													+ "6- "
+													+ "6- Modificacion de usuarios"
 													+ "7- Cerrar sesion\n"
 													+ "0- Salir\n";
 

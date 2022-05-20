@@ -15,24 +15,24 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Session
-{
+public class Session {
 	private User user = new User();// declarando e inicializando el objeto
 	private boolean logged;
 
 	public Session()//Constructor Session
-		{
-			logged = false;
-		}
+	{
+		logged = false;
+	}
+
 	public boolean isLogged()//Devuelve el estado actual de la sesion
-		{
-			return logged;
-		}
+	{
+		return logged;
+	}
 
 	public void LoginV1() {//REFACTOR EN CLASE DATABASE
-	 String username = Interface.getString("Introduce Usuario: ");
-	 String password = Interface.getString("Introduzca contraseña: ");
-	 //User user = Database.Login(username, password);
+		String username = Interface.getString("Introduce Usuario: ");
+		String password = Interface.getString("Introduzca contraseña: ");
+		//User user = Database.Login(username, password);
 
 		ArrayList<String> users = readUserFile();
 		//System.out.println("A");//test
@@ -53,6 +53,7 @@ public class Session
 			System.err.println(username + "\nUsuario o Contraseña incorrecto!");
 		}
 	}
+
 	private boolean checkUser(String username) {//REFACTOR EN CLASE DATABASE
 		boolean found = false;
 		ArrayList<String> users = readUserFile(); // Paso 2
@@ -74,30 +75,36 @@ public class Session
 		String username = Interface.getString("Nombre de usuario ?: ");
 		if (Utils.validateUsername(username) == true) //|| ((checkUser(username)))
 		{
-			System.err.println("\nEl usuario "+username+" ya existe o el formato no es valido");
+			System.err.println("\nEl usuario " + username + " ya existe o el formato no es valido");
 			return;
 		}
 		String password = Interface.getString("Contraseña?: ");
-		if(Utils.validatePassword(password) == true) {return;}
+		if (Utils.validatePassword(password) == true) {
+			return;
+		}
 		String name = Interface.getString("Nombre completo?: ");
-		if (Utils.validateName(name) == true){return;}
+		if (Utils.validateName(name) == true) {
+			return;
+		}
 		String nif = Interface.getString("nif?: ");
-		if (Utils.validateNif(nif) == true){return;}
+		if (Utils.validateNif(nif) == true) {
+			return;
+		}
 		String email = Interface.getString("Email?: ");
-		if (Utils.validateEmail(email) == true){return;}
+		if (Utils.validateEmail(email) == true) {
+			return;
+		}
 		String address = Interface.getString("Direccion?: ");
 		String birthdate = Interface.getString("Fecha de nacimiento?: ");
 		String role = Interface.getString("Rol?: ");
 
-		if (Database.Signup(username,password,name,nif,email,address,birthdate,role))
-		{
+		if (Database.Signup(username, password, name, nif, email, address, birthdate, role)) {
 			System.out.println("Registrado correctamente");
-		}
-		else
-		{
+		} else {
 			System.out.println("No se ha registrado");
 		}
 	}
+
 	private void setUser(String[] currentUser) {
 		user.username = currentUser[0];
 		user.name = currentUser[2];
@@ -107,6 +114,7 @@ public class Session
 		user.birthdate = currentUser[6];
 		user.role = currentUser[7];
 	}
+
 	// Devuelve un Array con todos los usuarios
 	private ArrayList<String> readUserFile() {
 		ArrayList<String> lines = new ArrayList<String>();
@@ -124,6 +132,7 @@ public class Session
 		}
 		return lines;
 	}
+
 	public void ShowUser()// Devuelve los datos de usuario
 	{
 		System.out.println("Usuario: " + user.username);
@@ -136,43 +145,32 @@ public class Session
 
 		Interface.toContinue();
 	}
+
 	public void logout() // Cerrar sesion y establecer propiedades de usuario
 	{
 		logged = false;
 		user = new User();
 	}
-}
-/**
-	private boolean writeUser(String newUser)
-	{
+
+
+	private boolean writeUser(String newUser) {
 		boolean success = false;
-		try
-		{
+		try {
 			FileWriter myWriter = new FileWriter(Config.FILEPATH
-										+ Config.USERSFILE, true);
+					+ Config.USERSFILE, true);
 			myWriter.write(newUser);
 			myWriter.close();
 			success = true;
-		}
-		catch (IOException e)
-		{
+		} catch (IOException e) {
 			System.out.println("Ha ocurrido un error.");
 			e.printStackTrace();
 		}
 		return success;
 	}
+
 }
-ArrayList<String> users = readUsersFile(); // PASO 2
- for (int i = 0; i < users.size(); i++) { // PASO 3
- String[] currentUser = users.get(i).split("#");
- if (username.equalsIgnoreCase(currentUser[0])) {
- System.out.print("\nEl usuario ya existe\n");
- return;
- }
- public User getUser() // Devuelve el estado actual del usuario
- {
- return user;
- }
+
+ /**
  * LOGIN clase 1 - pedir usuario 2 - pedir password 3 - leer users.txt 4 -
  * validar user y password 5A - correcto=loggedtrue//guardar en constructor user
  * los datos 5B - incorrecto=loggedfalse// mensaje de error+fin de login

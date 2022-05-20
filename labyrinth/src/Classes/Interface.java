@@ -1,7 +1,7 @@
 /**
  * Interface.java.
  * Clase dada por el profesor
- * OAGS - 2021/22
+ * DMS/OAGS - 2021/22
  * version v1.2.0
  */
 package Classes;
@@ -65,7 +65,7 @@ public class Interface
 		return value;
 	}
 	
-	/** Metodo para que pida una accion para continuar
+	/**Metodo para que pida una accion para continuar
 	public static void toContinue() 
 	{
 		System.out.print("\nIntroduzca cualquier tecla para continuar ");
