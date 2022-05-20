@@ -31,10 +31,8 @@ public class Main
 		}
 		System.out.println(Classes.Config.GOODBYE);
 	}
-
 	private static void unloggedAction(int option) throws InterruptedException {
 		switch (option)
-
 		{
 			case 1:
 			{
@@ -42,21 +40,16 @@ public class Main
 				Thread.sleep(Config.MILISECONDS);
 				break;
 			}
-
 			case 2:
 			{
 				Session.signupV1();
 				Thread.sleep(Config.MILISECONDS);
 				break;
 			}
-
 		}
 	}
-
 	private static void loggedAction(int option) throws InterruptedException, IOException {
-
 		switch (option)
-
 		{
 			case 0: {
 				Thread.sleep(Config.MILISECONDS);
@@ -95,7 +88,5 @@ public class Main
 				break;
 			}
 		}
-
 	}
-
 }

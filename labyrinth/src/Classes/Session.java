@@ -54,22 +54,6 @@ public class Session {
 		}
 	}
 
-	private boolean checkUser(String username) {//REFACTOR EN CLASE DATABASE
-		boolean found = false;
-		ArrayList<String> users = readUserFile(); // Paso 2
-
-		for (int i = 0; i < users.size(); i++) // Paso 3
-		{
-			String[] currentUser = users.get(i).split("#");
-			if (username.equalsIgnoreCase(currentUser[0])) {
-				System.err.println(username + "\nError ya existe!");
-				found = true;
-				break;
-			}
-		}
-		return found;
-	}
-
 	public void signupV1()//REFACTOR EN CLASE DATABASE
 	{
 		String username = Interface.getString("Nombre de usuario ?: ");
@@ -104,8 +88,8 @@ public class Session {
 			System.out.println("No se ha registrado");
 		}
 	}
-
-	private void setUser(String[] currentUser) {
+	private void setUser(String[] currentUser) //REFACTOR EN DATABASE
+	{
 		user.username = currentUser[0];
 		user.name = currentUser[2];
 		user.email = currentUser[3];
@@ -114,8 +98,27 @@ public class Session {
 		user.birthdate = currentUser[6];
 		user.role = currentUser[7];
 	}
+	public void ShowUser()// Devuelve los datos de usuario. REFACTOR EN DATABASE
+	{
+		System.out.println("Usuario: " + user.username);
+		System.out.println("Nombre de usuario: " + user.name);
+		System.out.println("NIF: " + user.nif);
+		System.out.println("Correo electronico: " + user.email);
+		System.out.println("Direccion: " + user.address);
+		System.out.println("Fecha de nacimiento: " + user.birthdate);
+		System.out.println("Rol de usuario: " + user.role);
 
-	// Devuelve un Array con todos los usuarios
+		Interface.toContinue();
+	}
+	public void logout() // Cerrar sesion y establecer propiedades de usuario
+	{
+		logged = false;
+		user = new User();
+	}
+
+//---------------------------------------------------------------------
+
+	// Devuelve un Array con todos los usuarios. REFACTOR EN LA CLASE LOG
 	private ArrayList<String> readUserFile() {
 		ArrayList<String> lines = new ArrayList<String>();
 		try {
@@ -132,28 +135,7 @@ public class Session {
 		}
 		return lines;
 	}
-
-	public void ShowUser()// Devuelve los datos de usuario
-	{
-		System.out.println("Usuario: " + user.username);
-		System.out.println("Nombre de usuario: " + user.name);
-		System.out.println("NIF: " + user.nif);
-		System.out.println("Correo electronico: " + user.email);
-		System.out.println("Direccion: " + user.address);
-		System.out.println("Fecha de nacimiento: " + user.birthdate);
-		System.out.println("Rol de usuario: " + user.role);
-
-		Interface.toContinue();
-	}
-
-	public void logout() // Cerrar sesion y establecer propiedades de usuario
-	{
-		logged = false;
-		user = new User();
-	}
-
-
-	private boolean writeUser(String newUser) {
+	private boolean writeUser(String newUser) {//REFACTOR EN CLASE DATABASE
 		boolean success = false;
 		try {
 			FileWriter myWriter = new FileWriter(Config.FILEPATH
@@ -167,7 +149,21 @@ public class Session {
 		}
 		return success;
 	}
+	private boolean checkUser(String username) {//REFACTOR EN CLASE DATABASE
+		boolean found = false;
+		ArrayList<String> users = readUserFile(); // Paso 2
 
+		for (int i = 0; i < users.size(); i++) // Paso 3
+		{
+			String[] currentUser = users.get(i).split("#");
+			if (username.equalsIgnoreCase(currentUser[0])) {
+				System.err.println(username + "\nError ya existe!");
+				found = true;
+				break;
+			}
+		}
+		return found;
+	}
 }
 
  /**

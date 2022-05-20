@@ -194,30 +194,25 @@ public class Labyrinth {
         boolean found = false;
 
         path = new ArrayList<Coordinate>();//limpiando el path
-
         Coordinate startCell = new Coordinate();//creando objeto tipo coordenada
         startCell.i = startI;//entrando en el path la casilla de inicio (i)
         startCell.j = startJ;//entrando en el path la casilla de inicio (i)
         startCell.direction = 0;//Estableciendo la direccion de inicio en 0
 
         path.add(startCell);//iniciando el path
-
         while (!found && path.size() > 0) {
             path.get(path.size() - 1).direction += 1;//posicion inicial del laberinto incrementado en 1 posicion
 
             if (path.get(path.size() - 1).direction <= 4)//comprobando entre 0 y 4 la direccion a moverse tras incrementar 1 posicion
             {
                 Coordinate nextCell = setNextCell(path.get(path.size() - 1));
-                if (checkCell(nextCell))
-                {
+                if (checkCell(nextCell)) {
                     path.add(nextCell);
-                    if (nextCell.i == endI && nextCell.j == endJ)
-                    {
+                    if (nextCell.i == endI && nextCell.j == endJ) {
                         found = true;
                     }
                 }
-            }
-            else
+            } else
             {
                 path.remove(path.size() - 1);//borrando la ultima posicion
             }
@@ -262,7 +257,7 @@ public class Labyrinth {
         return true;
     }
 }
-
+//-------------------------------------------------------------------------------------------------------
     /**private char getCell(int Ienter, int Jenter)
      * {
         if
