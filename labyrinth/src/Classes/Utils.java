@@ -1,3 +1,9 @@
+/**
+ * Utils.java.
+ * Clase que contiene las validaciones de insercion de datos en el sistema
+ * OAGS - 2021/22
+ * version v1.2.0
+ */
 package Classes;
 
 import java.math.BigInteger;

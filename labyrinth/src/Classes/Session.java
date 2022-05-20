@@ -2,7 +2,7 @@
  * Session.java.
  * Clase del sistema para resolver las sesiones
  * OAGS - 2021/22
- * version v1.0.0
+ * version v1.2.0
  */
 
 package Classes;
@@ -22,7 +22,7 @@ public class Session
 
 	public Session()//Constructor Session
 		{
-			logged = true;
+			logged = false;
 		}
 	public boolean isLogged()//Devuelve el estado actual de la sesion
 		{
@@ -32,9 +32,9 @@ public class Session
 	public void LoginV1() {//REFACTOR EN CLASE DATABASE
 	 String username = Interface.getString("Introduce Usuario: ");
 	 String password = Interface.getString("Introduzca contraseña: ");
-	 User user = Database.Login(username, password);
+	 //User user = Database.Login(username, password);
 
-		/**ArrayList<String> users = readUserFile();
+		ArrayList<String> users = readUserFile();
 		//System.out.println("A");//test
 		for (int i = 0; i < users.size(); i++) {
 			String[] currentUser = users.get(i).split("#");
@@ -46,7 +46,7 @@ public class Session
 				System.out.println(username + "\nHa iniciado sesion con exito!");
 				break;
 			}
-		}*/
+		}
 		//System.out.println("D");//test
 		if (!logged) {
 			//System.out.println("Z");//test
@@ -55,7 +55,7 @@ public class Session
 	}
 	private boolean checkUser(String username) {//REFACTOR EN CLASE DATABASE
 		boolean found = false;
-		/**ArrayList<String> users = readUserFile(); // Paso 2
+		ArrayList<String> users = readUserFile(); // Paso 2
 
 		for (int i = 0; i < users.size(); i++) // Paso 3
 		{
@@ -65,7 +65,7 @@ public class Session
 				found = true;
 				break;
 			}
-		}*/
+		}
 		return found;
 	}
 
@@ -81,7 +81,7 @@ public class Session
 		if(Utils.validatePassword(password) == true) {return;}
 		String name = Interface.getString("Nombre completo?: ");
 		if (Utils.validateName(name) == true){return;}
-		String nif = Interface.getString("DNI?: ");
+		String nif = Interface.getString("nif?: ");
 		if (Utils.validateNif(nif) == true){return;}
 		String email = Interface.getString("Email?: ");
 		if (Utils.validateEmail(email) == true){return;}
@@ -141,7 +141,8 @@ public class Session
 		logged = false;
 		user = new User();
 	}
-
+}
+/**
 	private boolean writeUser(String newUser)
 	{
 		boolean success = false;
@@ -161,7 +162,7 @@ public class Session
 		return success;
 	}
 }
-/**ArrayList<String> users = readUsersFile(); // PASO 2
+ArrayList<String> users = readUsersFile(); // PASO 2
  for (int i = 0; i < users.size(); i++) { // PASO 3
  String[] currentUser = users.get(i).split("#");
  if (username.equalsIgnoreCase(currentUser[0])) {

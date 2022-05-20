@@ -1,8 +1,8 @@
 /**
  * Labyrinth.java.
- * Clase user para usar constructor
+ * Clase que contiene el el algoritmo del laberinto
  * OAGS - 2021/22
- * version v1.0.0
+ * version v1.2.0
  */
 
 package Classes;
@@ -92,38 +92,27 @@ public class Labyrinth {
     {
         System.out.print(c + " ");
     }
-
     public void showMap() throws IOException, InterruptedException
     {
         char cell = ' ';
-        if (!loaded)
-        {
-            System.err.print("No se ha cargado el laberinto");
-        }
-        else
-        {
-            for (int i = 0; i < map.length; i++)
-            {for (int j = 0; j < map[i].length; j++)
-                {
+        if (!loaded) {System.err.print("No se ha cargado el laberinto");}
+        else {
+            for (int i = 0; i < map.length; i++) {
+                for (int j = 0; j < map[i].length; j++) {
                     cell = map[i][j];
                     if (startI == i && startJ == j) {cell ='E';}
                     else if (endI == i && endJ == j) {cell ='S';}
-                    else
-                    {
-                        for(Coordinate coordinate : path)
-                        {
-                            if(coordinate.i == i && coordinate.j == j)
-                            {
-                                     if (coordinate.direction == 1) {cell ='^';}
+                    else {
+                        for(Coordinate coordinate : path) {
+                            if(coordinate.i == i && coordinate.j == j) {
+                                if (coordinate.direction == 1) {cell ='^';}
                                 else if (coordinate.direction == 2) {cell ='v';}
                                 else if (coordinate.direction == 3) {cell ='<';}
                                 else if (coordinate.direction == 4) {cell ='>';}
                             }
                         }
-                    }
-                    printCell(cell);
-                }
-                System.out.println();
+                    }printCell(cell);
+                }System.out.println();
             }
         }
     }

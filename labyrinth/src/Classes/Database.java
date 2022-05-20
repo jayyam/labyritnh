@@ -1,3 +1,9 @@
+/**
+ * Database.java.
+ * Clase de interaccion con la base de datos
+ * OAGS - 2021/22
+ * version v1.2.0
+ */
 package Classes;
 
 import java.sql.*;
@@ -13,11 +19,7 @@ public class Database
     static final String QUERYDELETE = "";
     static final String QUERYLogin = "SELECT * FROM users WHERE username='<username>'AND password='<password>';";
 
-    /**public static boolean login(User user)
-     {
-        if (existe){return User;}
-        return null;
-     }
+    /**
      public static boolean checkUser()word
      {
         if (//existe)
@@ -26,15 +28,7 @@ public class Database
             }
         return false;
      }
-     public static boolean signup()
-     {
-        if (//existe)
-        {
-            return true;
-        }
-        return false;
-     }
-     */
+    */
     public static Boolean Signup(String username,String password,String name,String nif,String email,String address,String birthdate,String role)
     {
         try {

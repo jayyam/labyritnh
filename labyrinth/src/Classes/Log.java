@@ -1,3 +1,9 @@
+/**
+ * Log.java.
+ * Clase que registra los eventos del sistema
+ * OAGS - 2021/22
+ * version v1.2.0
+ */
 package Classes;
 
 import java.io.FileWriter;
@@ -14,7 +20,7 @@ public class Log
 	 "#" + address+
 	 "#" + birthdate +
 	 "#" + role;
-	 boolean result = writeLog(newLog);
+	 boolean result = writeLog(actuaLog);
 	 if (result) {
 	 System.out.println("registrado correctamente!");
 	 } else {

@@ -1,8 +1,8 @@
 /**
  * Coordinate.java.
- * Clase que
+ * Clase coordinate para usar como objeto
  * DMS/OAGS - 2021/22
- * version v1.0.0
+ * version v1.2.0
  */
 
 package Classes;

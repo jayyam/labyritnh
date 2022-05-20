@@ -2,22 +2,16 @@
  * Main.java.
  * Clase principal del sistema para resolver un laberinto
  * DMS/OAGS - 2021/22
- * version v1.0.0
+ * version v1.2.0
  */
 
 import Classes.Config;
-import Classes.Database;
-import Classes.Interface;
-import Classes.Utils;
-
 import java.io.IOException;
 
 public class Main
-
 {
 	public static Classes.Session Session = new Classes.Session();//Objeto creado de la clase session
 	public static Classes.Labyrinth Laby = new Classes.Labyrinth();//Objeto que se crea de la clase labyrinth
-
 
 	public static void main(String[] args) throws InterruptedException, IOException {
 		System.out.println("Version actual: " + Classes.Config.VERSION);
@@ -29,29 +23,28 @@ public class Main
 				option = Classes.Interface.getInt(Classes.Config.UNLOGGEDMENU); // LLamar a la clase config a la parte Unlogged
 				unloggedAction(option);
 			}
-
 			if (Session.isLogged())
-
 			{
 				option = Classes.Interface.getInt(Classes.Config.LOGGEDMENU); // LLamar a la clase Config
 				loggedAction(option);
 			}
 		}
 		System.out.println(Classes.Config.GOODBYE);
-
 	}
 
 	private static void unloggedAction(int option) throws InterruptedException {
 		switch (option)
 
 		{
-			case 1: {
+			case 1:
+			{
 				Session.LoginV1();
 				Thread.sleep(Config.MILISECONDS);
 				break;
 			}
 
-			case 2: {
+			case 2:
+			{
 				Session.signupV1();
 				Thread.sleep(Config.MILISECONDS);
 				break;
@@ -96,9 +89,9 @@ public class Main
 				break;
 			}
 			case 6: {
-				System.out.println("\nLOGIN Cerrando Sesion\n");
+				System.out.println("\nCerrando Sesion\n");
 				Session.logout();
-				Thread.sleep(Config.MILISECONDS);// time de espera antes despues de cerrar sesion
+				Thread.sleep(Config.MILISECONDS);
 				break;
 			}
 		}

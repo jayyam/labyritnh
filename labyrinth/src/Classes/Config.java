@@ -4,14 +4,14 @@ package Classes;
  * Config.java.
  * Clase que contiene los menus
  * OAGS - 2021/22
- * version v1.0.0
+ * version v1.2.0
  */
 
 public class Config
 
 {		public static final int MILISECONDS = 2000;
 		
-		public static final String VERSION =  "v1.1.0";
+		public static final String VERSION =  "v1.2.0";
 
 		public static final String FILEABSOLUTEPATH = "./assets/files";
 		public static final String FILEPATH = "/home/omarsantana/IdeaProjects/labyritnh/labyrinth/src/assets/files/";

@@ -1,8 +1,8 @@
 /**
  * User.java.
- * Clase user para usar constructor
+ * Clase user para usar como objeto
  * OAGS - 2021/22
- * version v1.0.0
+ * version v1.2.0
  */
 package Classes;
 
